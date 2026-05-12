@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Food Fest 2026 | Team XYZ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+        
+        :root {
+            --primary: #e67e22;
+            --secondary: #d35400;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .brand-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .festival-card:hover .card-img {
+            transform: scale(1.05);
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        .hidden-page {
+            display: none;
+        }
+
+        .active-nav {
+            color: var(--primary) !important;
+            border-bottom: 2px solid var(--primary);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="navigateTo('home')">
+                <i class="fas fa-utensils text-3xl text-orange-500"></i>
+                <h1 class="text-2xl font-bold brand-font text-gray-800">Food<span class="text-orange-500">Fest</span> 2026</h1>
+            </div>
+            <ul class="flex space-x-8 mt-4 md:mt-0 font-medium uppercase text-sm tracking-wider">
+                <li><a href="javascript:void(0)" id="nav-home" onclick="navigateTo('home')" class="hover:text-orange-500 transition-all active-nav">Home</a></li>
+                <li><a href="javascript:void(0)" id="nav-festivals" onclick="navigateTo('festivals')" class="hover:text-orange-500 transition-all">Festivals</a></li>
+                <li><a href="javascript:void(0)" id="nav-vendors" onclick="navigateTo('vendors')" class="hover:text-orange-500 transition-all">Vendors</a></li>
+                <li><a href="javascript:void(0)" id="nav-contact" onclick="navigateTo('contact')" class="hover:text-orange-500 transition-all">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="content-mount" class="min-h-screen">
+        
+        <!-- HOME PAGE -->
+        <section id="page-home" class="page-content">
+            <!-- Hero -->
+            <div class="relative h-96 bg-cover bg-center flex items-center justify-center text-center text-white" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                <div class="px-4">
+                    <h2 class="text-5xl font-bold mb-4 brand-font">A World of Flavors Awaits</h2>
+                    <p class="text-xl max-w-2xl mx-auto mb-8">Join us for the most prestigious culinary tour of the year. Experience global cuisines, masterclasses, and vibrant street food.</p>
+                    <button onclick="navigateTo('festivals')" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105">Explore Festivals</button>
+                </div>
+            </div>
+
+            <!-- Featured Festivals -->
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold brand-font text-gray-800">Upcoming Food Festivals</h3>
+                    <div class="w-24 h-1 bg-orange-500 mx-auto mt-2"></div>
+                </div>
+
+                <div id="festival-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Cards injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAILS PAGE -->
+        <section id="page-details" class="page-content hidden-page">
+            <div class="container mx-auto px-6 py-12">
+                <button onclick="navigateTo('home')" class="mb-6 text-orange-500 hover:underline flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Home
+                </button>
+                <div id="details-content" class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <!-- Dynamic Details Content -->
+                </div>
+            </div>
+        </section>
+
+        <!-- VENDORS PAGE -->
+        <section id="page-vendors" class="page-content hidden-page">
+            <div class="container mx-auto px-6 py-16">
+                <h2 class="text-4xl font-bold brand-font text-center mb-12">Our Featured Vendors</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow text-center hover:shadow-lg transition-all">
+                        <div class="w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-pizza-slice text-3xl text-orange-500"></i>
+                        </div>
+                        <h4 class="font-bold">Luigi's Italian</h4>
+                        <p class="text-sm text-gray-500">Authentic Stone Oven Pizza</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow text-center hover:shadow-lg transition-all">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-leaf text-3xl text-green-500"></i>
+                        </div>
+                        <h4 class="font-bold">Green Bowl</h4>
+                        <p class="text-sm text-gray-500">Organic & Vegan Delights</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow text-center hover:shadow-lg transition-all">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-fire text-3xl text-red-500"></i>
+                        </div>
+                        <h4 class="font-bold">Texas Smoke</h4>
+                        <p class="text-sm text-gray-500">Slow-Smoked BBQ Ribs</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow text-center hover:shadow-lg transition-all">
+                        <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-ice-cream text-3xl text-blue-500"></i>
+                        </div>
+                        <h4 class="font-bold">Frosty Peaks</h4>
+                        <p class="text-sm text-gray-500">Artisan Gelato & Desserts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT / REGISTRATION PAGE -->
+        <section id="page-contact" class="page-content hidden-page">
+            <div class="container mx-auto px-6 py-16">
+                <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                    <div class="md:w-1/3 bg-orange-500 p-10 text-white">
+                        <h3 class="text-2xl font-bold mb-6">Register Now</h3>
+                        <p class="mb-6">Sign up to get exclusive early-bird tickets and updates about your favorite vendors.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>123 Culinary Ave, Food City</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 234 567 890</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-envelope"></i>
+                                <span>hello@foodfest2026.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-10">
+                        <form id="registrationForm" onsubmit="handleFormSubmit(event)">
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold mb-2">Full Name</label>
+                                <input type="text" id="fullName" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="John Doe">
+                                <p id="nameError" class="text-red-500 text-xs mt-1 hidden">Please enter your full name.</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="john@example.com">
+                                <p id="emailError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email address.</p>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-sm font-bold mb-2">Preferred Festival</label>
+                                <select id="prefFestival" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500">
+                                    <option value="">-- Select a Festival --</option>
+                                    <option value="Spice Route Express">Spice Route Express</option>
+                                    <option value="Vegan Harvest Day">Vegan Harvest Day</option>
+                                    <option value="Sweet Tooth Carnival">Sweet Tooth Carnival</option>
+                                    <option value="Smoke & Sizzle BBQ">Smoke & Sizzle BBQ</option>
+                                </select>
+                                <p id="festError" class="text-red-500 text-xs mt-1 hidden">Please select a festival.</p>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-sm font-bold mb-2">Message / Special Requests</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Any dietary requirements?"></textarea>
+                                <p id="messageError" class="text-red-500 text-xs mt-1 hidden">Please provide a short message.</p>
+                            </div>
+                            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg transition-all">Submit Registration</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFIRMATION PAGE (Simulated JSP Response) -->
+        <section id="page-confirmation" class="page-content hidden-page">
+            <div class="container mx-auto px-6 py-20 text-center">
+                <div class="max-w-2xl mx-auto bg-white p-12 rounded-3xl shadow-xl">
+                    <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check-circle text-5xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold brand-font mb-4">Registration Successful!</h2>
+                    <p class="text-gray-600 mb-8">Thank you for registering. We have received your application and will contact you shortly with ticket details.</p>
+                    
+                    <div class="bg-gray-50 p-6 rounded-xl text-left mb-8 space-y-3">
+                        <h4 class="font-bold border-bottom border-gray-200 pb-2 mb-2">Submitted Information (Session Data):</h4>
+                        <p><span class="font-semibold text-orange-600">Name:</span> <span id="display-name"></span></p>
+                        <p><span class="font-semibold text-orange-600">Email:</span> <span id="display-email"></span></p>
+                        <p><span class="font-semibold text-orange-600">Preferred Event:</span> <span id="display-fest"></span></p>
+                        <p><span class="font-semibold text-orange-600">Message:</span> <span id="display-msg" class="italic"></span></p>
+                    </div>
+
+                    <button onclick="navigateTo('home')" class="text-orange-500 font-bold hover:underline">Return to Homepage</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-xl font-bold mb-4 brand-font">Food<span class="text-orange-500">Fest</span></h4>
+                <p class="text-gray-400">Bringing the world's finest chefs and flavors to your doorstep since 2010.</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                <ul class="text-gray-400 space-y-2">
+                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-white">Vendor Application</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+                <div class="flex space-x-4 text-2xl">
+                    <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+            © Team XYZ, 2026. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Festival Data
+        const festivals = [
+            {
+                id: 1,
+                title: "Asian Fusion Night",
+                name: "Spice Route Express",
+                date: "Oct 12-14, 2026",
+                location: "Central Park Plaza",
+                desc: "Explore the bold flavors of South-East Asia with over 50 unique street food stalls.",
+                img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                fullDesc: "Spice Route Express brings together the best of Thai, Vietnamese, and Japanese street food. From spicy laksa to hand-rolled sushi, this festival is a paradise for Asian cuisine lovers. Includes live music and traditional dance performances."
+            },
+            {
+                id: 2,
+                title: "Plant-Based Paradise",
+                name: "Vegan Harvest Day",
+                date: "Nov 05, 2026",
+                location: "Greenway Botanical Gardens",
+                desc: "A celebration of sustainable eating featuring innovative vegan chefs and local organic produce.",
+                img: "https://images.unsplash.com/photo-1512152272829-e3139592d56f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                fullDesc: "Vegan Harvest Day is more than just food; it's a lifestyle event. Discover how delicious plant-based dining can be with high-end vegan steaks, dairy-free cheeses, and organic smoothies. Featuring workshops on home composting and sustainable living."
+            },
+            {
+                id: 3,
+                title: "Sugar Rush Festival",
+                name: "Sweet Tooth Carnival",
+                date: "Dec 20, 2026",
+                location: "Grand Convention Hall",
+                desc: "Indulge in artisanal chocolates, towering cakes, and experimental desserts from world-class pastry chefs.",
+                img: "https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                fullDesc: "Satisfy your cravings at the Sweet Tooth Carnival. Watch master pastry chefs create chocolate sculptures, participate in cupcake decorating contests, and taste the world's most expensive truffles."
+            },
+            {
+                id: 4,
+                title: "Pitmaster Challenge",
+                name: "Smoke & Sizzle BBQ",
+                date: "Jan 15-17, 2027",
+                location: "Riverside Fairgrounds",
+                desc: "Authentic wood-fired BBQ, smoked meats, and secret sauces from the best pitmasters in the country.",
+                img: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+                fullDesc: "Get ready for the ultimate carnivore experience. Smoke & Sizzle features 72-hour smoked briskets, spicy buffalo wings, and a variety of craft beers to wash it all down. Live country music included."
+            }
+        ];
+
+        // Routing Logic
+        function navigateTo(pageId, extraParam = null) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(p => p.classList.add('hidden-page'));
+            
+            // Show requested page
+            const targetPage = document.getElementById(`page-${pageId}`);
+            if(targetPage) targetPage.classList.remove('hidden-page');
+
+            // Update Nav styles
+            document.querySelectorAll('nav ul a').forEach(a => a.classList.remove('active-nav'));
+            const navLink = document.getElementById(`nav-${pageId}`);
+            if(navLink) navLink.classList.add('active-nav');
+
+            // Handle Details View
+            if(pageId === 'details' && extraParam) {
+                renderDetails(extraParam);
+            }
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Render Home List
+        function renderHome() {
+            const container = document.getElementById('festival-list');
+            container.innerHTML = festivals.map(f => `
+                <div class="festival-card bg-white rounded-xl shadow-lg overflow-hidden group transition-all">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="${f.img}" alt="${f.name}" class="card-img w-full h-full object-cover transition-all duration-500">
+                        <div class="absolute top-2 right-2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            ${f.title}
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-1">${f.name}</h4>
+                        <p class="text-orange-500 text-sm font-medium mb-3">
+                            <i class="far fa-calendar-alt mr-1"></i> ${f.date}
+                        </p>
+                        <p class="text-gray-500 text-sm mb-4 line-clamp-2">${f.desc}</p>
+                        <div class="text-xs text-gray-400 mb-4">
+                            <i class="fas fa-map-marker-alt mr-1"></i> ${f.location}
+                        </div>
+                        <a href="javascript:void(0)" onclick="navigateTo('details', ${f.id})" class="block text-center border-2 border-orange-500 text-orange-500 font-bold py-2 rounded-lg hover:bg-orange-500 hover:text-white transition-all">
+                            View Details
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Details Page
+        function renderDetails(id) {
+            const fest = festivals.find(f => f.id === id);
+            const container = document.getElementById('details-content');
+            if(!fest) return;
+
+            container.innerHTML = `
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-1/2">
+                        <img src="${fest.img}" class="w-full h-full object-cover min-h-[400px]">
+                    </div>
+                    <div class="lg:w-1/2 p-10 lg:p-16">
+                        <span class="text-orange-500 font-bold tracking-widest uppercase text-sm">${fest.title}</span>
+                        <h2 class="text-4xl font-bold brand-font my-4 text-gray-800">${fest.name}</h2>
+                        <div class="flex flex-wrap gap-4 mb-8">
+                            <div class="bg-orange-50 px-4 py-2 rounded-lg text-orange-600 font-medium">
+                                <i class="far fa-calendar-alt mr-2"></i> ${fest.date}
+                            </div>
+                            <div class="bg-blue-50 px-4 py-2 rounded-lg text-blue-600 font-medium">
+                                <i class="fas fa-map-marker-alt mr-2"></i> ${fest.location}
+                            </div>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+                            ${fest.fullDesc}
+                        </p>
+                        <div class="border-t border-gray-100 pt-8 flex items-center justify-between">
+                            <div>
+                                <p class="text-sm text-gray-400">Tickets starting from</p>
+                                <p class="text-2xl font-bold text-gray-800">$25.00</p>
+                            </div>
+                            <button onclick="navigateTo('contact')" class="bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-500 transition-all">Register Interest</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Form Validation & Submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const festival = document.getElementById('prefFestival').value;
+            const message = document.getElementById('message').value.trim();
+
+            let isValid = true;
+
+            // Simple Validation
+            if(!name) { document.getElementById('nameError').classList.remove('hidden'); isValid = false; }
+            else { document.getElementById('nameError').classList.add('hidden'); }
+
+            if(!email || !email.includes('@')) { document.getElementById('emailError').classList.remove('hidden'); isValid = false; }
+            else { document.getElementById('emailError').classList.add('hidden'); }
+
+            if(!festival) { document.getElementById('festError').classList.remove('hidden'); isValid = false; }
+            else { document.getElementById('festError').classList.add('hidden'); }
+
+            if(!message) { document.getElementById('messageError').classList.remove('hidden'); isValid = false; }
+            else { document.getElementById('messageError').classList.add('hidden'); }
+
+            if(isValid) {
+                // Mimic Servlet Processing
+                document.getElementById('display-name').innerText = name;
+                document.getElementById('display-email').innerText = email;
+                document.getElementById('display-fest').innerText = festival;
+                document.getElementById('display-msg').innerText = `"${message}"`;
+
+                // Show Confirmation Page
+                navigateTo('confirmation');
+                
+                // Clear Form
+                document.getElementById('registrationForm').reset();
+            }
+        }
+
+        // Initialize App
+        window.onload = () => {
+            renderHome();
+        };
+    </script>
+</body>
+</html>
