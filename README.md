@@ -46,7 +46,11 @@ FoodFestival/
 │   └── validation.js         # 表单前端验证逻辑 (喵喵负责)
 ├── WEB-INF/
 │   ├── classes/              # 编译后的 Servlet 类文件 
-│   └── web.xml               # Servlet 映射与 Web 配置 
+│   └── web.xml               # Servlet 映射与 Web 配置
+├── Image/                     # 图片素材放置地，目前为空，替换图片素材存放地
+│   ├── food/             
+│   └── logo/
+│   └── vendor/                
 ├── home.jsp                  # 项目主页：展示美食节概览 (jolin负责滚动，页面设计，美观，对齐) (月盈负责四个活动都要设计好)
 ├── home_festival_module.jsp  # 点击explore festival 和导航栏 festivals 跳转主页商家界面 (月盈负责)
 ├── home_vendor_module.jsp    # 点击导航栏vendor跳转商家界面 (Cherry负责)
