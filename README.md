@@ -13,7 +13,30 @@
 - **Environment:** JDK 17+, Tomcat 10+
 
 ---
+## 使用指南
+1. 克隆项目 (Clone)
+组员不需要自己新建项目，直接导入：
 
+在 Eclipse 中选择 File -> Import...。
+
+选择 Git -> Projects from Git (with smart import) -> Clone URI。
+
+输入仓库 URL 和自己的 GitHub 账号信息。
+
+完成后，项目会自动出现在组员的 Workspace 中。
+
+2. 协作常用操作
+团队开发的核心逻辑是：先拉取（Pull），再提交（Commit），最后推送（Push）。
+
+更新代码 (Pull)： 每天写代码前，右键项目 -> Team -> Pull。这会将队友上传的代码同步到你的本地。
+
+上传更新 (Push)：
+
+写完代码后，先 Commit 到本地仓库。
+
+再次 Pull 以确保没有冲突。
+
+如果没有冲突，右键项目 -> Team -> Push to Origin。
 ## 📂 项目结构
 ```text
 FoodFestival/
