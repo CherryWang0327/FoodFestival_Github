@@ -1,0 +1,38 @@
+name: Java Web Deploy
+
+# 触发条件：当你 push 代码到 main 分支时执行
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # 使用 GitHub 提供的虚拟 Ubuntu 环境
+
+    steps:
+      # 第一步：把你的代码拉取到 GitHub 的虚拟机里
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 第二步：配置 Java 环境并用 Maven 打包
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      
+      - name: Build with Maven
+        run: mvn clean package -DskipTests
+
+      # 第三步：通过 SSH 连上你的云服务器，把打包好的 Jar/War 传过去并重启
+      - name: Deploy to Cloud Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}     # 服务器IP
+          username: ${{ secrets.SERVER_USER }} # 用户名（如 root）
+          key: ${{ secrets.SSH_PRIVATE_KEY }} # 你的 SSH 私钥
+          script: |
+            cd /your/project/path
+            # 这里写你服务器上重启项目的脚本命令
+            # 例如：sh restart.sh 或 nohup java -jar target/app.jar &
