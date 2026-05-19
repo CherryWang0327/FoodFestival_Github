@@ -1,3 +1,11 @@
+<!-- 1. 必须引入 Tailwind CDN（如果这个页面还用了其他的 Tailwind 原生类名） -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. 必须引入你的自定义样式表（也就是你写了 .btn-outline-orange 的地方） -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+</head>
+<body class="bg-gray-50">
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <section id="festivals" class="container mx-auto px-6 py-20">
     <div class="text-center mb-16">
@@ -10,12 +18,12 @@
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all">
             <div class="relative h-56 overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-500">
-                <div class="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">Asian Fusion</div>
+                <div class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Asian Fusion</div>
             </div>
             <div class="p-6">
                 <h4 class="text-xl font-bold mb-2">Spice Route Express</h4>
                 <p class="text-gray-500 text-sm mb-4">Oct 12-14, 2026 | Central Park</p>
-                <a href="details.jsp?id=1" class="block text-center border-2 border-orange-500 text-orange-500 font-bold py-2 rounded-lg hover:bg-orange-500 hover:text-white transition-all">View Details</a>
+                <a href="details.jsp?id=1" class="btn-outline-orange">View Details</a>
             </div>
         </div>
 
@@ -28,7 +36,8 @@
             <div class="p-6">
                 <h4 class="text-xl font-bold mb-2">Vegan Harvest Day</h4>
                 <p class="text-gray-500 text-sm mb-4">Nov 05, 2026 | Green Garden</p>
-                <a href="details.jsp?id=2" class="block text-center border-2 border-orange-500 text-orange-500 font-bold py-2 rounded-lg hover:bg-orange-500 hover:text-white transition-all">View Details</a>
+                <a href="details.jsp?id=1" class="btn-outline-orange">View Details</a>
+
             </div>
         </div>
     </div>

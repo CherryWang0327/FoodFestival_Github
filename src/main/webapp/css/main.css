@@ -11,3 +11,21 @@ body {
 .brand-font { 
     font-family: 'Playfair Display', serif; 
 }
+
+/* 使用 !important 确保样式优先级最高 */
+.btn-outline-orange {
+    display: inline-block !important; /* 确保它能响应 padding 和 size */
+    text-align: center !important;
+    border: 2px solid #f97316 !important;
+    color: #f97316 !important;
+    font-weight: 700 !important;
+    padding: 0.5rem 1.5rem !important;
+    border-radius: 9999px !important;
+    transition: all 0.2s ease-in-out !important;
+    text-decoration: none !important;
+}
+
+.btn-outline-orange:hover {
+    background-color: #f97316 !important;
+    color: white !important;
+}
