@@ -30,7 +30,7 @@
 		            <p class="text-gray-500 text-sm leading-relaxed">Bringing the authentic Texas smokehouse experience to your plate.</p>
 		        </div>
 		        <div class="mt-auto">
-		            <a href="vendor.jsp" class="btn-outline-orange">Explore Menu</a>
+		            <a href="menus.jsp?category=grill" class="btn-outline-orange">Explore Menu</a>
 		        </div>
 		    </div>
 		
@@ -48,7 +48,7 @@
 		            <p class="text-gray-500 text-sm leading-relaxed">Fresh, handcrafted sushi made with premium grade-A ingredients.</p>
 		        </div>
 		        <div class="mt-auto">
-		            <a href="vendor.jsp" class="btn-outline-orange">Explore Menu</a>
+		            <a href="menus.jsp?category=sushi" class="btn-outline-orange">Explore Menu</a>
 		        </div>
 		    </div>
 		
@@ -66,7 +66,7 @@
 		            <p class="text-gray-500 text-sm leading-relaxed">Homemade pasta sauces following traditional family recipes.</p>
 		        </div>
 		        <div class="mt-auto">
-		            <a href="vendor.jsp" class="btn-outline-orange">Explore Menu</a>
+		            <a href="menus.jsp?category=pasta" class="btn-outline-orange">Explore Menu</a>
 		        </div>
 		    </div>
 		</div>
