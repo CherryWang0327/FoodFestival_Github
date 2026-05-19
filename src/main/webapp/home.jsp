@@ -5,7 +5,11 @@
     <!-- Hero Section -->
     <section class="hero-bg h-[500px] flex items-center justify-center text-center text-white">
         <div class="px-4">
+<<<<<<< HEAD
             <h2 class="text-6xl font-bold mb-4 brand-font">A World of Flavors Awaits！！！！！</h2>
+=======
+            <h2 class="text-6xl font-bold mb-4 brand-font">A World of Flavors Awaits!!!!!!</h2>
+>>>>>>> e0fe22e8de9ede9a44a4a4c66e0e08b3be06ccdd
             <p class="text-xl max-w-2xl mx-auto mb-8">Join us for the most prestigious culinary tour of the year.</p>
             <a href="#festivals" class="bg-orange-500 hover:bg-orange-600 px-10 py-4 rounded-full font-bold transition-all inline-block shadow-lg">Explore Festivals</a>
         </div>
