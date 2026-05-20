@@ -29,7 +29,7 @@
 				    <p><span class="font-semibold text-orange-600">Message:</span> <span class="italic text-gray-500">"${userMsg}"</span></p>
 				</div>
 
-                <a href="index.jsp" class="inline-block text-orange-500 font-bold hover:underline">
+                <a href="home.jsp" class="inline-block text-orange-500 font-bold hover:underline">
                     <i class="fas fa-home mr-1"></i> Return to Homepage
                 </a>
             </div> </section>
