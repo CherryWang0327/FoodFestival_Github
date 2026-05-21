@@ -21,7 +21,7 @@
                 <h1 class="text-2xl font-bold brand-font">Food<span class="text-orange-500">Fest</span> 2026</h1>
             </div>
             <ul class="flex space-x-8 font-medium uppercase text-sm">
-                <li><a href="index.jsp" class="hover:text-orange-500">Home</a></li>
+                <li><a href="home.jsp" class="hover:text-orange-500">Home</a></li>
                 <li><a href="event_registration.jsp" class="text-orange-500 border-b-2 border-orange-500">Register</a></li>
             </ul>
         </nav>
@@ -63,15 +63,14 @@
                     <div class="mb-6">
                         <label class="block text-sm font-bold mb-2">Message / Special Requests</label>
                         <textarea id="message" name="message" rows="3" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 outline-none" placeholder="Any dietary requirements?"></textarea>
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-all shadow-lg">Submit Registration</button>
                     </div>
-                    <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-all shadow-lg">Submit Registration</button>
+
                 </form>
             </div>
         </div>
     </main>
-
-    <footer class="bg-gray-900 text-white py-8 text-center mt-10">
-        <p>© Team 6, 2026. All Rights Reserved.</p>
-    </footer>
+	<%-- 5. 引入页脚 (包含版权信息和 JS 引用) --%>
+	<%@ include file="includes/footer.jsp" %>
 </body>
 </html>
