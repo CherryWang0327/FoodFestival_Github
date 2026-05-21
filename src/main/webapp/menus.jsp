@@ -46,7 +46,7 @@
                 // 根据 category 渲染不同的内容逻辑
                 if ("grill".equals(category)) { 
             %>
-                <!-- Asian Items -->
+                <!-- Grill Items -->
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <img src="https://images.unsplash.com/photo-1563241522-30d8d0856012?w=600" class="w-full h-56 object-cover">
                     <div class="p-6">

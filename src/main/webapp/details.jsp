@@ -94,20 +94,7 @@
 
 <body class="bg-gray-50">
 
-<!-- HEADER -->
-
-    <header class="bg-white shadow-md">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-utensils text-3xl text-orange-500"></i>
-                <h1 class="text-2xl font-bold brand-font">Food<span class="text-orange-500">Fest</span> 2026</h1>
-            </div>
-            <ul class="flex space-x-8 font-medium uppercase text-sm">
-                <li><a href="index.jsp" class="hover:text-orange-500">Home</a></li>
-                <li><a href="event_registration.jsp" class="hover:text-orange-500">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<%@ include file="includes/header.jsp" %>
 
 <!-- MAIN -->
 
@@ -225,15 +212,9 @@
 
 </main>
 
-<!-- FOOTER -->
+<%-- 5. 引入页脚 (包含版权信息和 JS 引用) --%>
+<%@ include file="includes/footer.jsp" %>
 
-<footer class="bg-gray-900 text-white py-10 text-center mt-20">
-
-    <p class="text-gray-400">
-        © Team XYZ, 2026. All Rights Reserved.
-    </p>
-
-</footer>
 
 </body>
 </html>
