@@ -190,7 +190,7 @@
             <div class="mb-8">
 
                 <iframe
-                    class="w-full h-42 rounded-2xl"
+                    class="w-full h-38 rounded-2xl"
                     src="<%= map %>"
                     loading="lazy">
                 </iframe>
@@ -200,7 +200,7 @@
             <!-- BUTTON -->
 
             <a href="event_registration.jsp"
-               class="inline-block bg-gray-900 text-white px-5 py-3 rounded-full font-bold hover:bg-orange-500 transition-all duration-300 hover:scale-105">
+               class="inline-block bg-gray-900 text-white px-6 py-3 rounded-full font-bold hover:bg-orange-500 transition-all duration-300 hover:scale-105">
 
                 Register Your Interest
 
