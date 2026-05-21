@@ -22,7 +22,7 @@
             <div class="relative h-56 overflow-hidden">
 
                 <img
-                    src="${pageContext.request.contextPath}/images/spice-route.png"
+                    src="${pageContext.request.contextPath}/assets/images/event/spice-route.png"
                     alt="Spice Route Express"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
 
@@ -58,7 +58,7 @@
 
             <div class="relative h-56 overflow-hidden">
                 <img
-                    src="${pageContext.request.contextPath}/images/vegan.png"
+                    src="${pageContext.request.contextPath}/assets/images/event/vegan.png"
                     alt="Vegan Harvest Day"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
 
@@ -96,7 +96,7 @@
 
             <div class="relative h-56 overflow-hidden">
                 <img
-                    src="${pageContext.request.contextPath}/images/midnight-street.png"
+                    src="${pageContext.request.contextPath}/assets/images/event/midnight-street.png"
                     alt="Midnight Street Fiesta"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
 
@@ -133,7 +133,7 @@
 
             <div class="relative h-56 overflow-hidden">
                 <img
-                    src="${pageContext.request.contextPath}/images/seafood.png"
+                    src="${pageContext.request.contextPath}/assets/images/event/seafood.png"
                     alt="Coastal Seafood Carnival"
                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
 

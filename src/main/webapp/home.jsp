@@ -14,7 +14,7 @@
         <p class="text-xl max-w-2xl mx-auto mb-8">Join us for the most prestigious culinary tour of the year.</p>
         <a href="#festivals" class="bg-orange-500 hover:bg-orange-600 px-10 py-4 rounded-full font-bold transition-all inline-block shadow-lg">Explore Festivals</a>
     </div>
-</section>
+   </section>
 
     <!-- 动态包含：节日模块 -->
     <jsp:include page="home_festival_module.jsp" />
