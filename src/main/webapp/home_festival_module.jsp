@@ -1,10 +1,4 @@
-<!-- 1. 必须引入 Tailwind CDN（如果这个页面还用了其他的 Tailwind 原生类名） -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- 2. 必须引入你的自定义样式表（也就是你写了 .btn-outline-orange 的地方） -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
-</head>
-<body class="bg-gray-50">
+
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <section id="festivals" class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">

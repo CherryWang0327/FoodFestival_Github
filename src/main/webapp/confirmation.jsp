@@ -1,8 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="includes/header.jsp" %>
+<%@ page import="java.util.UUID" %>
 
 <%
-    String bookingRef = "FF2026-" + String.valueOf(System.currentTimeMillis()).substring(7);
+    String bookingRef = "FF2026-" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();
     String safeUserName  = (request.getAttribute("userName")    != null) ? (String)request.getAttribute("userName")    : "Guest";
     String safeUserEmail = (request.getAttribute("userEmail")   != null) ? (String)request.getAttribute("userEmail")   : "-";
     String safeFest      = (request.getAttribute("selectedFest")!= null) ? (String)request.getAttribute("selectedFest"): "-";
@@ -18,7 +19,7 @@
         </div>
         <h2 class="text-4xl font-bold brand-font text-gray-800 mb-3">You're Registered!</h2>
         <p class="text-gray-500 text-lg">
-            A confirmation has been noted for <span class="font-semibold text-orange-500"><%= safeUserEmail %></span>.
+            A confirmation has been noted for <span class="font-semibold text-orange-500"><%= safeUserEmail %></span>.<br>
             See you at the festival!
         </p>
     </section>
@@ -28,7 +29,7 @@
         <div class="bg-orange-500 text-white rounded-t-2xl px-8 py-5 flex items-center justify-between">
             <div>
                 <p class="text-xs font-semibold uppercase tracking-widest opacity-80">Booking Reference</p>
-                <p class="text-2xl font-bold tracking-wider"><%= bookingRef %></p>
+                <p class="text-2xl font-bold tracking-wider break-all"><%= bookingRef %></p>
             </div>
             <div class="text-right opacity-80 text-sm">
                 <p><i class="fas fa-utensils mr-1"></i> FoodFest 2026</p>
@@ -36,7 +37,7 @@
             </div>
         </div>
 
-        <div class="relative bg-white border-x border-dashed border-orange-300">
+        <div class="relative bg-white border-x border-dashed border-orange-300 overflow-hidden">
             <div class="absolute -left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gray-50 border border-orange-200"></div>
             <div class="absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-gray-50 border border-orange-200"></div>
             <div class="border-t-2 border-dashed border-orange-200 mx-4"></div>
@@ -89,10 +90,6 @@
         </div>
 
         <div class="bg-gray-50 border border-t-0 border-orange-200 rounded-b-2xl px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <a href="payment.jsp"
-               class="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-md text-center">
-                <i class="fas fa-credit-card mr-2"></i>Proceed to Payment
-            </a>
             <a href="home.jsp"
                class="w-full sm:w-auto text-center text-gray-500 hover:text-orange-500 font-medium text-sm transition-all">
                 <i class="fas fa-arrow-left mr-1"></i> Return to Homepage

@@ -18,66 +18,21 @@
 <body class="bg-gray-50">
 <header class="bg-white shadow-md sticky top-0 z-50">
 
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <nav class="w-full px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-2">
+        <i class="fas fa-utensils text-orange-500"></i>
+        <h1 class="text-2xl font-bold brand-font">
+            Food<span class="text-orange-500">Fest</span> 2026
+        </h1>
+    </div>
 
-        <div class="flex flex-wrap items-center justify-between gap-4">
-
-            <!-- Logo -->
-            <a href="home.jsp" class="flex items-center space-x-2 flex-shrink-0">
-
-                <i class="fas fa-utensils text-orange-500 text-2xl"></i>
-
-                <h1 class="text-2xl md:text-3xl font-bold brand-font whitespace-nowrap">
-                    Food<span class="text-orange-500">Fest</span> 2026
-                </h1>
-
-            </a>
-
-            <!-- Navigation -->
-            <ul class="flex flex-wrap items-center justify-center gap-4 md:gap-8 
-                       font-medium uppercase text-sm tracking-wider">
-
-                <li>
-                    <a href="home.jsp"
-                       class="hover:text-orange-500 transition-all duration-300">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="home.jsp#festivals"
-                       class="hover:text-orange-500 transition-all duration-300">
-                        Festivals
-                    </a>
-                </li>
-
-                <li>
-                    <a href="home.jsp#vendors"
-                       class="hover:text-orange-500 transition-all duration-300">
-                        Vendors
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.jsp"
-                       class="hover:text-orange-500 transition-all duration-300">
-                        Contact
-                    </a>
-                </li>
-
-                <li>
-                    <a href="user_registration.jsp"
-                       class="bg-orange-500 text-white px-5 py-2 rounded-lg
-                              hover:bg-orange-600 transition-all duration-300
-                              whitespace-nowrap">
-                        Register/Login
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
+    <ul class="flex space-x-8 font-medium uppercase text-sm tracking-wider items-center">
+        <li><a href="home.jsp" class="hover:text-orange-500 transition-all">Home</a></li>
+        <li><a href="home.jsp#festivals" class="hover:text-orange-500 transition-all">Festivals</a></li>
+        <li><a href="home.jsp#vendors" class="hover:text-orange-500 transition-all">Vendors</a></li>
+        <li><a href="contact.jsp" class="hover:text-orange-500 transition-all">Contact</a></li>
+        <li><a href="user_registration.jsp" class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition-all">Register/Login</a></li>
+    </ul>
     </nav>
 
 </header>

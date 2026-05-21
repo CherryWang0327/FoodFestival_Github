@@ -1,21 +1,19 @@
 
-/* 1. 引入外部字体 */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
 
-/* 2. 定义基础样式 */
 body { 
     font-family: 'Poppins', sans-serif; 
 }
 
-/* 3. 定义自定义类 */
+
 .brand-font { 
     font-family: 'Playfair Display', serif; 
 }
 
 
-/* 使用 !important 确保样式优先级最高 */
+
 .btn-outline-orange {
-    display: inline-block !important; /* 确保它能响应 padding 和 size */
+    display: inline-block !important; 
     text-align: center !important;
     border: 2px solid #f97316 !important;
     color: #f97316 !important;
