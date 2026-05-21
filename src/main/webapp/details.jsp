@@ -98,12 +98,12 @@
 
 <!-- MAIN -->
 
-<main class="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
+<main class="max-w-6xl mx-auto px-4 md:px-5 py-4 md:py-5">
 
     <!-- Back Button -->
 
     <a href="home.jsp"
-       class="inline-flex items-center mb-10 text-orange-500 hover:text-orange-600 font-bold">
+       class="inline-flex items-center mb-4 text-orange-500 hover:text-orange-600 font-bold">
 
         <i class="fas fa-arrow-left mr-2"></i>
 
@@ -117,19 +117,19 @@
 
         <!-- IMAGE -->
 
-        <div class="lg:w-1/2">
+        <div class="lg:w-1/2 h-[420px] lg:h-auto">
 
             <img
-                src="${pageContext.request.contextPath}/images/<%= image %>"
+                src="${pageContext.request.contextPath}/assets/images/event/<%= image %>"
                 alt="<%= title %>"
-                class="w-full h-64 md:h-96 lg:h-full object-cover"
+                class="w-full h-full object-cover"
             >
 
         </div>
 
         <!-- CONTENT -->
 
-        <div class="lg:w-1/2 p-6 md:p-8 lg:p-12">
+        <div class="lg:w-1/2 p-4 md:p-5 lg:p-6">
 
             <!-- CATEGORY -->
 
@@ -141,7 +141,7 @@
 
             <!-- TITLE -->
 
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold my-6 text-gray-800 leading-tight">
+            <h2 class="text-2xl md:text-3xl font-bold my-3 text-gray-800 leading-tight">
 
                 <%= title %>
 
@@ -149,9 +149,9 @@
 
             <!-- INFO -->
 
-            <div class="flex flex-wrap gap-4 mb-8">
+            <div class="flex flex-wrap gap-3 mb-5">
 
-                <div class="bg-orange-50 px-4 py-3 rounded-xl text-orange-600 font-medium">
+                <div class="bg-orange-50 px-3 py-2 rounded-xl text-orange-600 text-sm font-medium">
 
                     <i class="far fa-calendar-alt mr-2"></i>
 
@@ -159,7 +159,7 @@
 
                 </div>
 
-                <div class="bg-purple-50 px-4 py-3 rounded-xl text-purple-600 font-medium">
+                <div class="bg-purple-50 px-3 py-2 rounded-xl text-purple-600 text-sm font-medium">
 
                     <i class="far fa-clock mr-2"></i>
 
@@ -167,7 +167,7 @@
 
                 </div>
 
-                <div class="bg-blue-50 px-4 py-3 rounded-xl text-blue-600 font-medium">
+                <div class="bg-blue-50 px-3 py-2 rounded-xl text-blue-600 text-sm font-medium">
 
                     <i class="fas fa-map-marker-alt mr-2"></i>
 
@@ -179,7 +179,7 @@
 
             <!-- DESCRIPTION -->
 
-            <p class="text-gray-600 leading-relaxed text-base md:text-lg mb-8">
+            <p class="text-gray-600 leading-relaxed text-sm md:text-base mb-4">
 
                 <%= description %>
 
@@ -190,7 +190,7 @@
             <div class="mb-8">
 
                 <iframe
-                    class="w-full h-64 rounded-2xl"
+                    class="w-full h-42 rounded-2xl"
                     src="<%= map %>"
                     loading="lazy">
                 </iframe>
@@ -200,7 +200,7 @@
             <!-- BUTTON -->
 
             <a href="event_registration.jsp"
-               class="inline-block bg-gray-900 text-white px-8 py-4 rounded-full font-bold hover:bg-orange-500 transition-all duration-300 hover:scale-105">
+               class="inline-block bg-gray-900 text-white px-5 py-3 rounded-full font-bold hover:bg-orange-500 transition-all duration-300 hover:scale-105">
 
                 Register Your Interest
 
