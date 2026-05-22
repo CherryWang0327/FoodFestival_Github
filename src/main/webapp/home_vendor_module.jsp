@@ -12,7 +12,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
 		    <div class="bg-white p-8 rounded-2xl shadow-md text-center hover:-translate-y-2 transition-all flex flex-col h-full">
 		        <div class="h-24 mb-4 flex items-center justify-center">
-		            <img src="assets/images/vendor/grill-master.webp" class="w-24 h-24 rounded-full object-cover border-4 border-orange-100 shadow-sm" alt="The Grill Master">
+		            <img src="assets/images/vendor/grill.png" class="w-24 h-24 rounded-full object-cover border-4 border-orange-100 shadow-sm" alt="The Grill Master">
 		        </div>
 		        <div class="h-16 flex items-center justify-center">
 		            <h4 class="text-xl font-bold leading-tight">The Grill Master</h4>
@@ -23,14 +23,12 @@
 		        <div class="flex-grow flex items-center justify-center mb-6">
 		            <p class="text-gray-500 text-sm leading-relaxed">Bringing the authentic Texas smokehouse experience to your plate.</p>
 		        </div>
-		        <div class="mt-auto">
-		            <a href="menus.jsp?category=grill" class="btn-outline-orange">Explore Menu</a>
-		        </div>
+
 		    </div>
 		
 		    <div class="bg-white p-8 rounded-2xl shadow-md text-center hover:-translate-y-2 transition-all flex flex-col h-full">
 		        <div class="h-24 mb-4 flex items-center justify-center">
-		            <img src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=200" class="w-24 h-24 rounded-full object-cover border-4 border-orange-100">
+		            <img src="assets/images/vendor/sushi.jpg" class="w-24 h-24 rounded-full object-cover border-4 border-orange-100">
 		        </div>
 		        <div class="h-16 flex items-center justify-center">
 		            <h4 class="text-xl font-bold leading-tight">Sushi Zen</h4>
@@ -41,14 +39,11 @@
 		        <div class="flex-grow flex items-center justify-center mb-6">
 		            <p class="text-gray-500 text-sm leading-relaxed">Fresh, handcrafted sushi made with premium grade-A ingredients.</p>
 		        </div>
-		        <div class="mt-auto">
-		            <a href="menus.jsp?category=sushi" class="btn-outline-orange">Explore Menu</a>
-		        </div>
 		    </div>
 		
 		    <div class="bg-white p-8 rounded-2xl shadow-md text-center hover:-translate-y-2 transition-all flex flex-col h-full">
 		        <div class="h-24 mb-4 flex items-center justify-center">
-		            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=200" class="w-24 h-24 rounded-full object-cover border-4 border-orange-100">
+		            <img src="assets/images/vendor/pasta.jpg" class="w-24 h-24 rounded-full object-cover border-4 border-orange-100">
 		        </div>
 		        <div class="h-16 flex items-center justify-center">
 		            <h4 class="text-xl font-bold leading-tight">Pasta Paradiso</h4>
@@ -58,9 +53,6 @@
 		        </div>
 		        <div class="flex-grow flex items-center justify-center mb-6">
 		            <p class="text-gray-500 text-sm leading-relaxed">Homemade pasta sauces following traditional family recipes.</p>
-		        </div>
-		        <div class="mt-auto">
-		            <a href="menus.jsp?category=pasta" class="btn-outline-orange">Explore Menu</a>
 		        </div>
 		    </div>
 		</div>
