@@ -1,31 +1,1340 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
 
-body { 
-    font-family: 'Poppins', sans-serif; 
+/* ==========================================================================
+   1. 现代浏览器极限重置 (Tailwind Core Reset)
+   ========================================================================== */
+*, ::before, ::after {
+    box-sizing: border-box; /* 彻底防止内边距撑开盒子 */
+    margin: 0;
+    padding: 0;
 }
 
+body {
+    background-color: #f9fafb;
+    color: #374151;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* 防止组件溢出导致手机端左右晃动 */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block; /* 保证动画和形变正常 */
+}
+
+ul {
+    list-style: none;
+}
 
 .brand-font { 
     font-family: 'Playfair Display', serif; 
+    font-weight: 700;
 }
 
+/* ==========================================================================
+   2. Header & 导航栏布局 (解决挤压塌陷)
+   ========================================================================== */
+.site-header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+}
 
+.nav-container {
+    width: 100%;
+    max-width: 1280px; /* 限制最大宽度，防止大屏幕上两头拉得太开 */
+    margin: 0 auto;     /* 水平居中 */
+    padding: 1.25rem 2rem; /* 稍微加深上下内边距，显出高级感 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+/* Logo 区域 */
+.logo-area {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* 绝对不允许被导航栏挤压变窄 */
+}
+
+.logo-area .brand-icon {
+    color: #f97316;
+    font-size: 1.75rem; 
+    margin-right: 0.75rem; /* 精准控制图标与文字间距 */
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    letter-spacing: -0.025em;
+}
+
+.text-orange {
+    color: #f97316;
+}
+
+/* 导航链接 (复刻 Tailwind space-x 动态间距) */
+.nav-links {
+    display: flex;
+    align-items: center;
+    font-weight: 600; /* 调粗到 600，Poppins 字体更清晰 */
+    text-transform: uppercase;
+    font-size: 0.8125rem; /* 微微缩小字号，更显国际范 */
+    letter-spacing: 0.1em;
+}
+
+/* 像素级还原 space-x-8 */
+.nav-links li + li {
+    margin-left: 2rem; 
+}
+
+.nav-item {
+    color: #4b5563; /* 初始灰色 */
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.25s ease;
+}
+
+.nav-item:hover {
+    color: #f97316;
+}
+
+/* 右侧核心注册按钮 */
+.nav-btn {
+    background-color: #f97316;
+    color: #ffffff;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem; /* 更加圆润的现代卡片角 */
+    font-weight: 600;
+    box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-btn:hover {
+    background-color: #ea580c;
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   3. Hero Section (复刻巨幕空间感)
+   ========================================================================== */
+.hero-section {
+    background-image: url('https://images.unsplash.com/photo-1682862279256-b2a9e4f3d22c?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Ds'); 
+    background-size: cover; 
+    background-position: center 35%; /* 优化图片聚焦视点，不被切掉核心视界 */
+    background-repeat: no-repeat;
+    height: 550px; /* 适当调高 50px，给大字留出透气空间 */
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+}
+
+/* 完美高光漫反射遮罩 */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.6)); /* 渐变遮罩比死黑更好看 */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 0 1.5rem;
+    width: 100%;
+    max-width: 800px; /* 限制主标题文本不贴边 */
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 4rem; /* 放大到 64px 震撼视觉 */
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* 文字阴影防止白色背景图吃字 */
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300; /* 轻量级字体更具有文艺感 */
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 36rem;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
+}
+
+/* 底部发光主操作按钮 */
+.hero-btn {
+    background-color: #f97316;
+    color: #ffffff;
+    padding: 1.125rem 3rem;
+    border-radius: 9999px;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    box-shadow: 0 10px 20px -5px rgba(249, 115, 22, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn:hover {
+    background-color: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px -5px rgba(249, 115, 22, 0.5);
+}
+
+/* ==========================================================================
+   4. UI 卡片镂空按钮
+   ========================================================================== */
 .btn-outline-orange {
-    display: inline-block !important; 
-    text-align: center !important;
-    border: 2px solid #f97316 !important;
-    color: #f97316 !important;
-    font-weight: 700 !important;
-    padding: 0.5rem 1.5rem !important;
-    border-radius: 9999px !important;
-    transition: all 0.2s ease-in-out !important;
-    text-decoration: none !important;
+    display: block;
+    margin-top: 1.5rem;
+    text-align: center;
+    border: 2px solid #f97316;
+    color: #f97316;
+    font-weight: 600;
+    padding: 0.75rem 0;
+    border-radius: 0.75rem;
+    background-color: transparent;
+    transition: all 0.25s ease;
 }
 
 .btn-outline-orange:hover {
-    background-color: #f97316 !important;
-    color: white !important;
+    background-color: #f97316;
+    color: #ffffff;
 }
 
+
+/* ==========================================================================
+   7. Upcoming Food Festivals (节日卡片模块)
+   ========================================================================== */
+
+/* 外层整体容器控制 */
+.festival-section {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 1rem; /* 对应默认的 py-16 px-4 */
+}
+
+/* 模块头部排版 */
+.section-heading {
+    text-align: center;
+    margin-bottom: 3.5rem; /* 对应 mb-14 */
+}
+
+.section-title {
+    font-size: 2rem; /* 对应手机端 text-3xl 基准 */
+    color: #1f2937;
+}
+
+/* 标题下方的橙色短装饰线 */
+.heading-line {
+    width: 6rem; /* 对应 w-24 */
+    height: 4px; /* 对应 h-1 */
+    background-color: #f97316; /* 对应 bg-orange-500 */
+    margin: 1rem auto 0 auto; /* 对应 mx-auto mt-4 */
+    border-radius: 9999px; /* 对应 rounded-full */
+}
+
+.section-subtitle {
+    color: #6b7280; /* 对应 text-gray-500 */
+    font-size: 0.875rem; /* 对应 text-sm */
+    line-height: 1.625;
+    max-width: 42rem; /* 对应 max-w-2xl */
+    margin: 1.25rem auto 0 auto; /* 对应 mt-5 mx-auto */
+}
+
+/* 4列网格系统：完美解决拔掉 Tailwind 后的缩团塌陷 */
+.festival-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* 默认手机端单列 */
+    gap: 2rem; /* 对应 gap-8 */
+}
+
+/* ==========================================================================
+   卡片复合体样式
+   ========================================================================== */
+.festival-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem; /* 对应 rounded-3xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07); /* 对应 shadow-md */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* 垂直分布 */
+    
+    /* 平滑的整体升起动效（对标 group hover:-translate-y-3 duration-500） */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 整体悬停 */
+.festival-card:hover {
+    transform: translateY(-0.75rem); /* 卡片平滑离地 12px */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); /* 对应 hover:shadow-2xl */
+}
+
+/* 图片视窗 */
+.card-image-wrap {
+    position: relative;
+    height: 14rem; /* 对应 h-56 */
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 图片放大过渡动效 (对标 duration-700) */
+    transition: transform 0.7rem cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 核心技巧：当外层卡片触发悬停，图片放大（对标 group-hover:scale-110） */
+.festival-card:hover .card-img {
+    transform: scale(1.1);
+}
+
+/* 悬浮小标签通用样式 */
+.card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* 四个模块分别不同的四种颜色细分 */
+.badge-asian { background-color: #f97316; }   /* bg-orange-500 */
+.badge-healthy { background-color: #22c55e; } /* bg-green-500 */
+.badge-street { background-color: #f59e0b; }  /* bg-amber-500 */
+.badge-seafood { background-color: #06b6d4; } /* bg-cyan-500 */
+
+/* 卡片文本主体区 */
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* 撑开空间，保证纵向按钮对齐 */
+}
+
+.card-title {
+    font-size: 1.5rem; /* 对应 text-2xl */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+/* 日期与地点 */
+.card-date {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.date-asian { color: #f97316; }
+.date-healthy { color: #22c55e; }
+.date-street { color: #f59e0b; }
+.date-seafood { color: #06b6d4; }
+
+/* 详情描述文本（补白自适应） */
+.card-text {
+    color: #4b5563;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    flex-grow: 1; /* 自动吸收多余空间，让底部的按钮完美对齐横线 */
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   8. 媒体查询响应式支持（复刻 sm:, lg:, xl: 的多列转换）
+   ========================================================================== */
+@media (min-width: 640px) {
+    .section-title { font-size: 2.25rem; }
+    .section-subtitle { font-size: 1rem; }
+    .festival-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } /* 变成2列 */
+    .festival-section { padding: 4rem 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+    .section-title { font-size: 3rem; }
+    .festival-section { padding: 6rem 2rem; }
+}
+
+@media (min-width: 1280px) {
+    .festival-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } /* 大屏拉开成4列 */
+}
+/* ==========================================================================
+   9. Featured Vendors (商家卡片模块)
+   ========================================================================== */
+
+.vendor-section {
+    background-color: #f3f4f6; /* 对应 bg-gray-100 */
+    padding: 5rem 0; /* 对应 py-20 */
+    width: 100%;
+}
+
+.vendor-container {
+    width: 100%;
+    max-width: 1280px; /* 对应 container mx-auto */
+    margin: 0 auto;
+    padding: 0 1.5rem; /* 对应 px-6 */
+}
+
+/* 模块头部 */
+.vendor-heading {
+    text-align: center; /* 对应 text-center */
+    margin-bottom: 4rem; /* 对应 mb-16 */
+}
+
+.vendor-section-title {
+    font-size: 2.25rem; /* 对应 text-4xl */
+    font-weight: 700; /* 对应 font-bold */
+    color: #1f2937; /* 对应 text-gray-800 */
+}
+
+.vendor-heading-line {
+    width: 6rem; /* 对应 w-24 */
+    height: 4px; /* 对应 h-1 */
+    background-color: #f97316; /* 对应 bg-orange-500 */
+    margin: 1rem auto 0 auto; /* 对应 mx-auto mt-4 */
+}
+
+.vendor-section-subtitle {
+    margin-top: 1rem; /* 对应 mt-4 */
+    color: #4b5563; /* 对应 text-gray-600 */
+}
+
+/* 3列网格布局：复刻 grid-cols-1 md:grid-cols-3 */
+.vendor-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* 默认手机端 1 列 */
+    gap: 2.5rem; /* 对应 gap-10 */
+}
+
+/* 商家单卡片 */
+.vendor-card {
+    background-color: #ffffff; /* 对应 bg-white */
+    padding: 2rem; /* 对应 p-8 */
+    border-radius: 1rem; /* 对应 rounded-2xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07); /* 对应 shadow-md */
+    text-align: center; /* 对应 text-center */
+    
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* 对应 flex flex-col h-full */
+    
+    /* 对标 transition-all duration-300 和 hover:-translate-y-2 */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vendor-card:hover {
+    transform: translateY(-0.5rem); /* 悬浮离地 8px */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* 头像外层框 (对标 h-24 mb-4 flex items-center justify-center) */
+.vendor-img-wrap {
+    height: 6rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 商家圆形头像 (对标 w-24 h-24 rounded-full object-cover border-4 border-orange-100) */
+.vendor-avatar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffedd5;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* 名字排版区域 (对标 h-16 flex items-center justify-center) */
+.vendor-name-wrap {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vendor-name {
+    font-size: 1.25rem; /* 对应 text-xl */
+    font-weight: 700; /* 对应 font-bold */
+    line-height: 1.25; /* 对应 leading-tight */
+    color: #1f2937;
+}
+
+/* 标签菜系区域 (对标 h-10 flex items-center justify-center) */
+.vendor-tag-wrap {
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vendor-tag {
+    color: #f97316; /* 对应 text-orange-500 */
+    font-size: 0.875rem; /* 对应 text-sm */
+    font-weight: 600; /* 对应 font-semibold */
+    font-style: italic; /* 对应 italic */
+}
+
+/* 商家简介区域 (对标 flex-grow flex items-center justify-center mb-6) */
+.vendor-desc-wrap {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.vendor-desc {
+    color: #6b7280; /* 对应 text-gray-500 */
+    font-size: 0.875rem; /* 对应 text-sm */
+    line-height: 1.625; /* 对应 leading-relaxed */
+}
+
+/* ==========================================================================
+   10. 商家模块响应式媒体查询 (复刻 md: 栅格)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .vendor-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* 平板和电脑端展示为3列并排 */
+    }
+}
+
+/* ==========================================================================
+   11. Site Footer (页脚模块样式)
+   ========================================================================== */
+
+.site-footer {
+    background-color: #111827; /* 对应 bg-gray-900 极客深灰 */
+    color: #ffffff; /* 对应 text-white */
+    padding: 2.5rem 0; /* 对应 py-10 */
+    margin-top: 5rem; /* 对应 mt-20 (80px) 的模块留白 */
+    width: 100%;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center; /* 对应 text-center */
+    padding: 0 1.5rem;
+}
+
+.footer-brand {
+    font-size: 1.125rem; /* 对应 text-lg */
+    margin-bottom: 0.5rem; /* 对应 mb-2 */
+    letter-spacing: 0.05em;
+}
+
+.footer-copyright {
+    font-size: 0.875rem; /* 对应 text-sm */
+    color: rgba(255, 255, 255, 0.5); /* 完美复刻 opacity-50，使用半透明白 */
+}
+
+/* ==========================================================================
+   12. Event Details Page (活动详情页专用样式)
+   ========================================================================== */
+
+/* 详情页主心骨包裹层 */
+.details-main-wrap {
+    width: 100%;
+    max-width: 1152px; /* 对应 max-w-6xl */
+    margin: 0 auto;
+    padding: 1.5rem 1rem; /* 对应 px-4 py-4 */
+}
+
+/* 返回主页按钮 */
+.back-home-link {
+    display: inline-flex;
+    align-items: center;
+    color: #f97316; /* text-orange-500 */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: color 0.2s ease;
+}
+
+.back-home-link i {
+    margin-right: 0.5rem;
+}
+
+.back-home-link:hover {
+    color: #ea580c;
+}
+
+/* 详情巨型主卡片面板 */
+.details-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem; /* rounded-3xl */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* 手机端纵向铺开 */
+}
+
+/* 图片区域容器 */
+.details-img-area {
+    width: 100%;
+    height: 420px; /* 对应 h-[420px] */
+}
+
+.details-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 右侧核心文本内容容器 */
+.details-content-area {
+    width: 100%;
+    padding: 1.5rem; /* 对应 p-4 md:p-5 等综合补白 */
+}
+
+/* 核心解决方案：利用 data-color 属性硬编码映射颜色类别 */
+.details-badge {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+}
+.details-badge[data-color="orange"] { color: #f97316; }
+.details-badge[data-color="green"]  { color: #22c55e; }
+.details-badge[data-color="amber"]  { color: #f59e0b; }
+.details-badge[data-color="cyan"]   { color: #06b6d4; }
+
+/* 详情页主标题 */
+.details-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0.75rem 0;
+    line-height: 1.25;
+}
+
+/* 三大核心信息标签盘 */
+.details-info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.info-tag-box {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.info-tag-box i {
+    margin-right: 0.5rem;
+}
+
+/* 独立三色小盒子的硬编码 */
+.tag-orange { background-color: #fff7ed; color: #ea580c; }
+.tag-purple { background-color: #faf5ff; color: #9333ea; }
+.tag-blue   { background-color: #eff6ff; color: #2563eb; }
+
+/* 活动长篇正文描述 */
+.details-description {
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+}
+
+/* 地图区域外挂组件 */
+.details-map-wrap {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.details-map-iframe {
+    width: 100%;
+    height: 240px; /* 换算优化原本的 h-38 */
+    border-radius: 1rem;
+    border: none;
+}
+
+/* 底部右侧“立即预预约”黑橘炫光大按钮 */
+.details-submit-btn {
+    display: inline-block;
+    background-color: #111827; /* bg-gray-900 */
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px; /* rounded-full */
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.details-submit-btn:hover {
+    background-color: #f97316; /* hover 变身高级企业橙 */
+    transform: scale(1.05); /* 柔和放大动效 */
+}
+
+/* ==========================================================================
+   13. 详情页高端响应式媒体查询 (横向分栏适配)
+   ========================================================================== */
+@media (min-width: 1024px) {
+    .details-main-wrap {
+        padding: 2.5rem 1.25rem;
+    }
+    
+    .details-card {
+        flex-direction: row; /* 电脑大屏由上下排列变为左右对称左右并排 */
+    }
+    
+    .details-img-area {
+        width: 50%; /* 完美平分左边 50% 图片 */
+        height: auto; /* 自动撑开等高 */
+    }
+    
+    .details-content-area {
+        width: 50%; /* 完美平分右边 50% 核心参数 */
+        padding: 2.5rem; /* 大排版舒张留白 */
+    }
+    
+    .details-title {
+        font-size: 2rem; /* 标题自适应变大 */
+    }
+}
+
+/* ==========================================================================
+   14. Contact Us Page (联系我们页专用样式)
+   ========================================================================== */
+
+/* 核心页边距包裹层 */
+.contact-main-wrap {
+    width: 100%;
+    max-width: 1080px; /* 对应 max-w-5xl */
+    margin: 0 auto;
+    padding: 4rem 1.5rem; /* 对应 py-16 px-6 */
+}
+
+/* 响应式弹性分栏布局 */
+.contact-flex-layout {
+    display: flex;
+    flex-direction: column; /* 手机端垂直纵向排开 */
+    gap: 3rem; /* 对应 gap-12 (48px) */
+}
+
+/* --------------------------------------------------------------------------
+   左侧：白底表单区域
+   -------------------------------------------------------------------------- */
+.contact-form-box {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 2rem; /* 对应 p-8 */
+    border-radius: 1rem; /* 对应 rounded-2xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02); /* shadow-lg */
+}
+
+.form-box-title {
+    font-size: 1.5rem; /* 对应 text-2xl */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem; /* 对应 mb-6 */
+}
+
+/* 表单输入组列 */
+.form-group {
+    margin-bottom: 1rem; /* 对应 mb-4 */
+}
+
+.form-group-last {
+    margin-bottom: 1.5rem; /* 对应 mb-6 */
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem; /* 对应 text-sm */
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 0.5rem; /* 对应 mb-2 */
+}
+
+/* 核心输入框基础状态 */
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.5rem 1rem; /* 对应 px-4 py-2 */
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem; /* 对应 rounded-lg */
+    outline: none; /* 彻底抹除浏览器默认外边框 */
+    font-family: inherit;
+    font-size: 0.9375rem;
+    color: #1f2937;
+    background-color: #ffffff;
+    
+    /* 平滑过渡发光动画 */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 多行文本框特殊约束 */
+.form-textarea {
+    resize: vertical; /* 允许用户上下拖拽高度，防止左右扯裂 */
+}
+
+/* 核心技巧：像素级复刻 Tailwind focus:ring-2 focus:ring-orange-500 */
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #f97316; /* 边框变橘色 */
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2); /* 柔和的外围 3px 浅橘色高光圈 */
+}
+
+/* 底部全宽主提交按钮 */
+.form-submit-btn {
+    width: 100%;
+    background-color: #f97316; /* bg-orange-500 */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.875rem 0; /* 对应 py-3 */
+    border-radius: 0.75rem; /* 对应 rounded-xl */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3); /* shadow-lg 带有橙色调 */
+    transition: all 0.2s ease-in-out;
+}
+
+.form-submit-btn:hover {
+    background-color: #ea580c; /* hover:bg-orange-600 */
+    box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   右侧：直接联系侧边栏
+   -------------------------------------------------------------------------- */
+.contact-info-sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* 对应 space-y-6 */
+}
+
+.info-sidebar-card {
+    background-color: #ffffff;
+    padding: 1.5rem; /* 对应 p-6 */
+    border-radius: 1rem; /* 对应 rounded-2xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.sidebar-card-title {
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem; /* 对应 mb-4 */
+    font-size: 1.0625rem;
+}
+
+/* 通用第三方链接行为 */
+.sidebar-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* 对应 space-x-3 */
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.sidebar-contact-link i {
+    font-size: 1.5rem; /* 对应 text-2xl */
+}
+
+/* 独立控制绿色 WhatsApp 与蓝色 Email */
+.link-whatsapp {
+    color: #16a34a; /* text-green-600 */
+    margin-bottom: 1rem; /* 对应 mb-4 */
+}
+.link-whatsapp:hover {
+    color: #15803d; /* hover:text-green-700 */
+}
+
+.link-email {
+    color: #2563eb; /* text-blue-600 */
+}
+.link-email:hover {
+    color: #1d4ed8; /* hover:text-blue-700 */
+}
+
+/* ==========================================================================
+   15. 联系我们页响应式媒体查询 (大屏分栏适配)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .contact-flex-layout {
+        flex-direction: row; /* 电脑端转为左右并排 */
+    }
+    
+    .contact-form-box {
+        width: 66.666667%; /* 对应 md:w-2/3 */
+    }
+    
+    .contact-info-sidebar {
+        width: 33.333333%; /* 对应 md:w-1/3 */
+    }
+}
+
+/* ==========================================================================
+   16. Visitor Registration Page (报名注册页专用样式)
+   ========================================================================== */
+
+/* 主心骨包裹层 */
+.reg-main-wrap {
+    width: 100%;
+    max-width: 960px; /* 对应 max-w-4xl */
+    margin: 0 auto;
+    padding: 4rem 1.5rem; /* 对应 py-16 px-6 */
+}
+
+/* 左右复合双色大卡片 */
+.reg-card-box {
+    background-color: #ffffff;
+    border-radius: 1.5rem; /* 对应 rounded-3xl */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* 对应 shadow-2xl */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* 手机端默认纵向铺开 */
+}
+
+/* --------------------------------------------------------------------------
+   左侧：橙色引导面板
+   -------------------------------------------------------------------------- */
+.reg-side-info {
+    background-color: #f97316; /* 对应 bg-orange-500 */
+    color: #ffffff;
+    padding: 2.5rem; /* 对应 p-10 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.side-info-title {
+    font-size: 1.875rem; /* 对应 text-3xl */
+    font-weight: 700;
+    margin-bottom: 1.5rem; /* 对应 mb-6 */
+}
+
+.side-info-desc {
+    margin-bottom: 2rem; /* 对应 mb-8 */
+    opacity: 0.9; /* 对应 opacity-90 */
+    line-height: 1.6;
+}
+
+.side-info-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* 对应 space-y-4 */
+    font-size: 0.875rem; /* 对应 text-sm */
+}
+
+.side-info-features i {
+    margin-right: 0.5rem; /* 对应 mr-2 */
+}
+
+/* --------------------------------------------------------------------------
+   右侧：白底表单区域
+   -------------------------------------------------------------------------- */
+.reg-form-area {
+    padding: 2.5rem; /* 对应 p-10 */
+    flex-grow: 1;
+}
+
+.form-area-title {
+    font-size: 1.5rem; /* 对应 text-2xl */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem; /* 对应 mb-6 */
+}
+
+/* 表单输入框组间距 */
+.reg-form-group {
+    margin-bottom: 1rem; /* 对应 mb-4 */
+}
+
+.reg-form-group-last {
+    margin-bottom: 1.5rem; /* 对应 mb-6 */
+}
+
+.reg-form-label {
+    display: block;
+    font-size: 0.875rem; /* 对应 text-sm */
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 0.5rem; /* 对应 mb-2 */
+}
+
+/* 表单控件公用基础硬编码 (Input, Select, Textarea) */
+.reg-form-input,
+.reg-form-select,
+.reg-form-textarea {
+    width: 100%;
+    padding: 0.5rem 1rem; /* 对应 px-4 py-2 */
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem; /* 对应 rounded-lg */
+    outline: none;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    color: #1f2937;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 下拉选择框微调 */
+.reg-form-select {
+    cursor: pointer;
+    height: 2.5rem;
+}
+
+/* 文本框防左右拉裂 */
+.reg-form-textarea {
+    resize: vertical;
+}
+
+/* 核心技巧：复刻 focus:ring-2 focus:ring-orange-500 */
+.reg-form-input:focus,
+.reg-form-select:focus,
+.reg-form-textarea:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+/* 底部提交注册大按钮 */
+.reg-submit-btn {
+    width: 100%;
+    background-color: #f97316; /* bg-orange-500 */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.875rem 0; /* 对应 py-3 */
+    border-radius: 0.75rem; /* 对应 rounded-xl */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3); /* shadow-lg */
+    transition: all 0.2s ease-in-out;
+    margin-top: 0.5rem;
+}
+
+.reg-submit-btn:hover {
+    background-color: #ea580c; /* hover:bg-orange-600 */
+    box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.4);
+}
+
+/* ==========================================================================
+   17. 注册页大屏媒体查询适配 (md: 栅格比例硬编码)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .reg-card-box {
+        flex-direction: row; /* 平板和电脑端展示为横向双栏并排 */
+    }
+    
+    .reg-side-info {
+        width: 33.333333%; /* 对应 md:w-1/3 占三等分之一 */
+    }
+    
+    .reg-form-area {
+        width: 66.666667%; /* 对应 md:w-2/3 占三等分之二 */
+    }
+}
+
+/* ==========================================================================
+   18. Registration Confirmation Page (注册成功确认页专用样式)
+   ========================================================================== */
+
+/* 主包裹层容器 */
+.confirm-main-wrap {
+    min-height: 80vh; /* 换算优化自 min-h-screen */
+    padding: 4rem 1rem; /* 对应 py-16 px-4 */
+    width: 100%;
+}
+
+/* 顶部成功图标与提示语 */
+.confirm-status-header {
+    width: 100%;
+    max-width: 42rem; /* 对应 max-w-2xl */
+    margin: 0 auto 2.5rem auto; /* 对应 mx-auto mb-10 */
+    text-align: center;
+}
+
+.status-icon-ring {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem; /* 对应 w-24 */
+    height: 6rem; /* 对应 h-24 */
+    border-radius: 50%;
+    background-color: #dcfce7; /* bg-green-100 */
+    margin-bottom: 1.5rem; /* 对应 mb-6 */
+}
+
+.status-icon-ring i {
+    color: #22c55e; /* text-green-500 */
+    font-size: 3rem; /* text-5xl */
+}
+
+.confirm-main-title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.75rem; /* mb-3 */
+}
+
+.confirm-main-subtitle {
+    color: #6b7280;
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.5;
+}
+
+.highlight-email {
+    font-weight: 600;
+    color: #f97316; /* text-orange-500 */
+}
+
+/* --------------------------------------------------------------------------
+   票券（Ticket）多层次样式设计
+   -------------------------------------------------------------------------- */
+.ticket-wrapper {
+    width: 100%;
+    max-width: 42rem; /* 对应 max-w-2xl */
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* 票头 - 核心橙色信息盘 */
+.ticket-header {
+    background-color: #f97316; /* bg-orange-500 */
+    color: #ffffff;
+    padding: 1.25rem 2rem; /* py-5 px-8 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-label-light {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+}
+
+.ticket-ref-num {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    word-break: break-all;
+}
+
+.ticket-header-right {
+    text-align: right;
+    opacity: 0.8;
+    font-size: 0.875rem; /* text-sm */
+}
+
+.ticket-subtext-light {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+/* 票券核心打孔与左右切口过渡区 */
+.ticket-tear-line-area {
+    position: relative;
+    background-color: #ffffff;
+    padding: 0 1rem;
+    height: 2rem; /* 预留纵向高度 */
+    overflow: hidden;
+    /* 左右边框防止穿帮 */
+    border-left: 1px solid #fed7aa;
+    border-right: 1px solid #fed7aa;
+}
+
+/* 左右两侧由内向外挖入的半圆切口 */
+.notch {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem; /* h-8 w-8 */
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #f9fafb; /* 颜色必须与页面背景色 site-body 完全一致 */
+    border: 1px solid #fed7aa; /* 橙色浅框 */
+    z-index: 5;
+}
+.notch-left { left: -1rem; } /* 向左抠出一半 */
+.notch-right { right: -1rem; } /* 向右抠出一半 */
+
+/* 横向连接左右切口的虚线 */
+.dashed-divider {
+    border-top: 2px dashed #fed7aa; /* border-orange-200 */
+    margin: 1rem 1rem 0 1rem; /* 错开切口边缘 */
+}
+
+/* 票身 - 白底信息盘 */
+.ticket-body {
+    background-color: #ffffff;
+    border-left: 1px solid #fed7aa;
+    border-right: 1px solid #fed7aa;
+    padding: 2rem; /* p-8 */
+}
+
+.ticket-body-section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #9ca3af; /* text-gray-400 */
+    margin-bottom: 1.25rem; /* mb-5 */
+}
+
+.ticket-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* space-y-5 */
+}
+
+/* 单条明细 */
+.ticket-info-item {
+    display: flex;
+    align-items: start;
+    gap: 1rem; /* gap-4 */
+}
+
+.info-icon-box {
+    width: 2.25rem; /* w-9 */
+    height: 2.25rem; /* h-9 */
+    border-radius: 50%;
+    background-color: #fff7ed; /* bg-orange-50 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.info-icon-box i {
+    color: #f97316; /* text-orange-500 */
+    font-size: 0.875rem;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.info-value {
+    color: #1f2937;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.info-value-text {
+    color: #4b5563;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+/* 票尾 - 浅灰控制面板 */
+.ticket-footer {
+    background-color: #f9fafb; /* bg-gray-50 */
+    border: 1px solid #fed7aa;
+    border-top: none; /* 顶部连着票身 */
+    border-radius: 0 0 1rem 1rem; /* 下方圆角 */
+    padding: 1.5rem 2rem; /* py-6 px-8 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket-return-btn {
+    width: 100%;
+    text-align: center;
+    color: #6b7280; /* text-gray-500 */
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.ticket-return-btn i {
+    margin-right: 0.25rem;
+}
+
+.ticket-return-btn:hover {
+    color: #f97316; /* hover 变品牌橙 */
+}
+
+/* 底部最下方提示文本 */
+.confirm-bottom-tip {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 2rem;
+}
+
+.confirm-bottom-tip i {
+    margin-right: 0.25rem;
+}
+
+.dark-tip-num {
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   19. 电子票券专属原版动效实现
+   ========================================================================== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ringPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    50%       { box-shadow: 0 0 0 16px rgba(34, 197, 94, 0); }
+}
+
+.confirm-fadein {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.success-ring {
+    animation: ringPulse 1.8s ease-in-out 0.4s 3;
+}
+
+/* 小屏幕下票身自适应水平对齐微调 */
+@media (min-width: 640px) {
+    .ticket-footer {
+        flex-direction: row;
+    }
+    .ticket-return-btn {
+        width: auto;
+    }
+}

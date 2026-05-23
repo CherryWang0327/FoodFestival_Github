@@ -5,54 +5,53 @@
     <meta charset="UTF-8">
     <title>Register | FoodFest 2026</title>
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 1. 外部依赖 (仅保留 FontAwesome 图标) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- 2. 引入品牌样式表 -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 
+    <!-- 3. 表单验证 JS -->
     <script src="${pageContext.request.contextPath}/js/validation.js" defer></script>
 </head>
-<body class="bg-gray-50">
+<body class="site-body">
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-utensils text-3xl text-orange-500"></i>
-                <h1 class="text-2xl font-bold brand-font">Food<span class="text-orange-500">Fest</span> 2026</h1>
-            </div>
-            <ul class="flex space-x-8 font-medium uppercase text-sm">
-                <li><a href="home.jsp" class="hover:text-orange-500">Home</a></li>
-                <li><a href="event_registration.jsp" class="text-orange-500 border-b-2 border-orange-500">Register</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- 统一引入导航栏 -->
+    <%@ include file="includes/header.jsp" %>
 
-    <main class="container mx-auto px-6 py-16">
-        <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-            <div class="md:w-1/3 bg-orange-500 p-10 text-white flex flex-col justify-center">
-                <h3 class="text-3xl font-bold mb-6">Join the Feast</h3>
-                <p class="mb-8 opacity-90">Register now to get exclusive updates and early bird tickets for FoodFest 2026.</p>
-                <div class="space-y-4 text-sm">
-                    <p><i class="fas fa-check-circle mr-2"></i> Free Entry for Kids</p>
-                    <p><i class="fas fa-check-circle mr-2"></i> 50+ Global Vendors</p>
-                    <p><i class="fas fa-check-circle mr-2"></i> Live Masterclasses</p>
+    <!-- 注册页主体包裹器 -->
+    <main class="reg-main-wrap">
+        <div class="reg-card-box">
+            
+            <!-- 左侧：纯色信息面板 -->
+            <div class="reg-side-info">
+                <h3 class="side-info-title">Join the Feast</h3>
+                <p class="side-info-desc">Register now to get exclusive updates and early bird tickets for FoodFest 2026.</p>
+                <div class="side-info-features">
+                    <p><i class="fas fa-check-circle"></i> Free Entry for Kids</p>
+                    <p><i class="fas fa-check-circle"></i> 50+ Global Vendors</p>
+                    <p><i class="fas fa-check-circle"></i> Live Masterclasses</p>
                 </div>
             </div>
 
-            <div class="md:w-2/3 p-10">
-                <h2 class="text-2xl font-bold mb-6">Visitor Registration</h2>
+            <!-- 右侧：表单输入区域 -->
+            <div class="reg-form-area">
+                <h2 class="form-area-title">Visitor Registration</h2>
                 <form id="regForm" action="RegisterServlet" method="POST" onsubmit="return validateForm()">
-                    <div class="mb-4">
-                        <label class="block text-sm font-bold mb-2">Full Name</label>
-                        <input type="text" id="fullName" name="fullName" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 outline-none" placeholder="Enter your name">
+                    
+                    <div class="reg-form-group">
+                        <label class="reg-form-label">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" class="reg-form-input" placeholder="Enter your name">
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-bold mb-2">Email Address</label>
-                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 outline-none" placeholder="your@email.com">
+                    
+                    <div class="reg-form-group">
+                        <label class="reg-form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="reg-form-input" placeholder="your@email.com">
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-bold mb-2">Preferred Festival</label>
-                        <select id="prefFestival" name="prefFestival" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 outline-none">
+                    
+                    <div class="reg-form-group">
+                        <label class="reg-form-label">Preferred Festival</label>
+                        <select id="prefFestival" name="prefFestival" class="reg-form-select">
                             <option value="">-- Choose an Event --</option>
                             <option value="Spice Route Express">Spice Route Express</option>
                             <option value="Vegan Harvest Day">Vegan Harvest Day</option>
@@ -60,17 +59,20 @@
                             <option value="Smoke & Sizzle BBQ">Smoke & Sizzle BBQ</option>
                         </select>
                     </div>
-                    <div class="mb-6">
-                        <label class="block text-sm font-bold mb-2">Message / Special Requests</label>
-                        <textarea id="message" name="message" rows="3" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-orange-500 outline-none" placeholder="Any dietary requirements?"></textarea>
-                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-all shadow-lg">Submit Registration</button>
+                    
+                    <div class="reg-form-group-last">
+                        <label class="reg-form-label">Message / Special Requests</label>
+                        <textarea id="message" name="message" rows="3" class="reg-form-textarea" placeholder="Any dietary requirements?"></textarea>
                     </div>
-
+                    
+                    <button type="submit" class="reg-submit-btn">Submit Registration</button>
                 </form>
             </div>
+            
         </div>
     </main>
-	<%-- 5. 引入页脚 (包含版权信息和 JS 引用) --%>
-	<%@ include file="includes/footer.jsp" %>
+
+    <%-- 5. 引入页脚 (包含版权信息和 JS 引用) --%>
+    <%@ include file="includes/footer.jsp" %>
 </body>
 </html>
