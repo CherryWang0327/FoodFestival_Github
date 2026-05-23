@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodFest 2026</title>
 
-    <!-- 1. 外部依赖 (仅保留 FontAwesome 图标) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        
-    <!-- 2. 引入品牌样式表 -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 </head>
 
@@ -32,5 +29,4 @@
             <li><a href="user_registration.jsp" class="nav-btn">Register/Login</a></li>
         </ul>
     </nav>
-
 </header>
