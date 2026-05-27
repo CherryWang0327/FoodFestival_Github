@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/component.css">
 <section id="festivals" class="festival-section">
-
     <!-- 模块标题区域 -->
     <div class="section-heading">
         <h3 class="section-title brand-font">Upcoming Food Festivals</h3>
