@@ -12,7 +12,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         
-        // 1. 接收 JSP 传来的参数
+        // 1. Receive parameters passed from JSP
         String name = request.getParameter("fullName");
         String email = request.getParameter("email");
         String festival = request.getParameter("prefFestival");
