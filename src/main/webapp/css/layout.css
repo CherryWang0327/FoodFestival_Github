@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Header & 导航栏
+   ========================================================================== */
+.site-header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 2rem;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo-area .brand-icon {
+    color: #f97316;
+    font-size: 1.75rem;
+    margin-right: 0.75rem;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    position: relative;
+    top: 3px;
+}
+
+.text-orange {
+    color: #f97316;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links li + li {
+    margin-left: 2rem;
+}
+
+.nav-item {
+    color: #4b5563;
+    position: relative;
+    padding: 0.25rem 0;
+    transition: color 0.25s ease;
+}
+
+.nav-item:hover {
+    color: #f97316;
+}
+
+.nav-btn {
+    background-color: #f97316;
+    color: #ffffff;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    box-shadow: 0 4px 6px -1px rgba(249, 115, 22, 0.2);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    align-self: center;
+}
+
+.nav-btn:hover {
+    background-color: #ea580c;
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Site Footer
+   ========================================================================== */
+.site-footer {
+    background-color: #111827;
+    color: #ffffff;
+    padding: 2.5rem 0;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.footer-brand {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.footer-copyright {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+}

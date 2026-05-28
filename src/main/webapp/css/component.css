@@ -1,0 +1,21 @@
+/* ==========================================================================
+   通用可复用 UI 组件
+   ========================================================================== */
+.btn-outline-orange {
+    display: block;
+    margin-top: 24px;
+    text-align: center;
+    border: 2px solid #f97316;
+    color: #f97316;
+    font-weight: 600;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.btn-outline-orange:hover {
+    background-color: #f97316;
+    color: #ffffff;
+}

@@ -1,0 +1,643 @@
+/* ==========================================================================
+   Event Details Page
+   ========================================================================== */
+.details-main-wrap {
+    width: 100%;
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+.back-home-link {
+    display: inline-flex;
+    align-items: center;
+    color: #f97316;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: color 0.2s ease;
+}
+
+.back-home-link i {
+    margin-right: 0.5rem;
+}
+
+.back-home-link:hover {
+    color: #ea580c;
+}
+
+.details-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.details-img-area {
+    width: 100%;
+    height: 420px;
+}
+
+.details-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details-content-area {
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.details-badge {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+}
+.details-badge[data-color="orange"] { color: #f97316; }
+.details-badge[data-color="green"]  { color: #22c55e; }
+.details-badge[data-color="amber"]  { color: #f59e0b; }
+.details-badge[data-color="cyan"]   { color: #06b6d4; }
+
+.details-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0.75rem 0;
+    line-height: 1.25;
+}
+
+.details-info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.info-tag-box {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.info-tag-box i {
+    margin-right: 0.5rem;
+}
+
+.tag-orange { background-color: #fff7ed; color: #ea580c; }
+.tag-purple { background-color: #faf5ff; color: #9333ea; }
+.tag-blue   { background-color: #eff6ff; color: #2563eb; }
+
+.details-description {
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+}
+
+.details-map-wrap {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.details-map-iframe {
+    width: 100%;
+    height: 240px;
+    border-radius: 1rem;
+    border: none;
+}
+
+.details-submit-btn {
+    display: inline-block;
+    background-color: #111827;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.details-submit-btn:hover {
+    background-color: #f97316;
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Contact Us Page
+   ========================================================================== */
+.contact-main-wrap {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.contact-flex-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.contact-form-box {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.form-box-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group-last {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    color: #1f2937;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+.form-submit-btn {
+    width: 100%;
+    background-color: #f97316;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.875rem 0;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+.form-submit-btn:hover {
+    background-color: #ea580c;
+    box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.4);
+}
+
+.contact-info-sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-sidebar-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.sidebar-card-title {
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-size: 1.0625rem;
+}
+
+.sidebar-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.sidebar-contact-link i {
+    font-size: 1.5rem;
+}
+
+.link-whatsapp { color: #16a34a; margin-bottom: 1rem; }
+.link-whatsapp:hover { color: #15803d; }
+.link-email { color: #2563eb; }
+.link-email:hover { color: #1d4ed8; }
+
+/* ==========================================================================
+   Visitor Registration Page
+   ========================================================================== */
+.reg-main-wrap {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.reg-card-box {
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.reg-side-info {
+    background-color: #f97316;
+    color: #ffffff;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.side-info-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.side-info-desc {
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.side-info-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+
+.side-info-features i {
+    margin-right: 0.5rem;
+}
+
+.reg-form-area {
+    padding: 2.5rem;
+    flex-grow: 1;
+}
+
+.form-area-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+.reg-form-group {
+    margin-bottom: 1rem;
+}
+
+.reg-form-group-last {
+    margin-bottom: 1.5rem;
+}
+
+.reg-form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 0.5rem;
+}
+
+.reg-form-input,
+.reg-form-select,
+.reg-form-textarea {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    color: #1f2937;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reg-form-select {
+    cursor: pointer;
+    height: 2.5rem;
+}
+
+.reg-form-textarea {
+    resize: vertical;
+}
+
+.reg-form-input:focus,
+.reg-form-select:focus,
+.reg-form-textarea:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+}
+
+.reg-submit-btn {
+    width: 100%;
+    background-color: #f97316;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.875rem 0;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3);
+    transition: all 0.2s ease-in-out;
+    margin-top: 0.5rem;
+}
+
+.reg-submit-btn:hover {
+    background-color: #ea580c;
+    box-shadow: 0 20px 25px -5px rgba(249, 115, 22, 0.4);
+}
+
+/* ==========================================================================
+   Registration Confirmation Page
+   ========================================================================== */
+.confirm-main-wrap {
+    min-height: 80vh;
+    padding: 4rem 1rem;
+    width: 100%;
+}
+
+.confirm-status-header {
+    width: 100%;
+    max-width: 42rem;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+}
+
+.status-icon-ring {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: #dcfce7;
+    margin-bottom: 1.5rem;
+}
+
+.status-icon-ring i {
+    color: #22c55e;
+    font-size: 3rem;
+}
+
+.confirm-main-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+}
+
+.confirm-main-subtitle {
+    color: #6b7280;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+.highlight-email {
+    font-weight: 600;
+    color: #f97316;
+}
+
+.ticket-wrapper {
+    width: 100%;
+    max-width: 42rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.ticket-header {
+    background-color: #f97316;
+    color: #ffffff;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-label-light {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+}
+
+.ticket-ref-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    word-break: break-all;
+}
+
+.ticket-header-right {
+    text-align: right;
+    opacity: 0.8;
+    font-size: 0.875rem;
+}
+
+.ticket-subtext-light {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.ticket-tear-line-area {
+    position: relative;
+    background-color: #ffffff;
+    padding: 0 1rem;
+    height: 2rem;
+    overflow: hidden;
+    border-left: 1px solid #fed7aa;
+    border-right: 1px solid #fed7aa;
+}
+
+.notch {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #f9fafb;
+    border: 1px solid #fed7aa;
+    z-index: 5;
+}
+.notch-left  { left: -1rem; }
+.notch-right { right: -1rem; }
+
+.dashed-divider {
+    border-top: 2px dashed #fed7aa;
+    margin: 1rem 1rem 0 1rem;
+}
+
+.ticket-body {
+    background-color: #ffffff;
+    border-left: 1px solid #fed7aa;
+    border-right: 1px solid #fed7aa;
+    padding: 2rem;
+}
+
+.ticket-body-section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #9ca3af;
+    margin-bottom: 1.25rem;
+}
+
+.ticket-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.ticket-info-item {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+
+.info-icon-box {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: #fff7ed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.info-icon-box i {
+    color: #f97316;
+    font-size: 0.875rem;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.info-value {
+    color: #1f2937;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.info-value-text {
+    color: #4b5563;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+.ticket-footer {
+    background-color: #f9fafb;
+    border: 1px solid #fed7aa;
+    border-top: none;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket-return-btn {
+    width: 100%;
+    text-align: center;
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.ticket-return-btn i {
+    margin-right: 0.25rem;
+}
+
+.ticket-return-btn:hover {
+    color: #f97316;
+}
+
+.confirm-bottom-tip {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 2rem;
+}
+
+.confirm-bottom-tip i {
+    margin-right: 0.25rem;
+}
+
+.dark-tip-num {
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   确认页动效
+   ========================================================================== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ringPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    50%       { box-shadow: 0 0 0 16px rgba(34, 197, 94, 0); }
+}
+
+.confirm-fadein {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.success-ring {
+    animation: ringPulse 1.8s ease-in-out 0.4s 3;
+}
