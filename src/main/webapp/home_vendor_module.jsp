@@ -2,17 +2,17 @@
 <section id="vendors" class="vendor-section">
     <div class="vendor-container">
         
-        <!-- 模块头部区域 -->
+        <!-- Header -->
         <div class="vendor-heading">
             <h3 class="vendor-section-title brand-font">Featured Vendors</h3>
             <div class="vendor-heading-line"></div>
             <p class="vendor-section-subtitle">Discover the masterminds behind the extraordinary tastes.</p>
         </div>
 
-        <!-- 商家网格容器 -->
+        <!-- Vendor card -->
         <div class="vendor-grid">
             
-            <!-- 商家卡片 1 -->
+            <!-- Vendor card - grill vendor -->
             <div class="vendor-card">
                 <div class="vendor-img-wrap">
                     <img src="assets/images/vendor/grill.png" class="vendor-avatar" alt="The Grill Master">
@@ -28,7 +28,7 @@
                 </div>
             </div>
 		
-            <!-- 商家卡片 2 -->
+            <!-- Vendor card - sushi vendor -->
             <div class="vendor-card">
                 <div class="vendor-img-wrap">
                     <img src="assets/images/vendor/sushi.jpg" class="vendor-avatar" alt="Sushi Zen">
@@ -44,7 +44,7 @@
                 </div>
             </div>
 		
-            <!-- 商家卡片 3 -->
+            <!-- Vendor card - pasta vendor -->
             <div class="vendor-card">
                 <div class="vendor-img-wrap">
                     <img src="assets/images/vendor/pasta.jpg" class="vendor-avatar" alt="Pasta Paradiso">

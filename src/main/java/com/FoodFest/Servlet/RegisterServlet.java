@@ -18,13 +18,13 @@ public class RegisterServlet extends HttpServlet {
         String festival = request.getParameter("prefFestival");
         String message = request.getParameter("message");
 
-        // 2. 将数据“打包”进 Request
+        // 2. Pack the information into Request
         request.setAttribute("userName", name);
         request.setAttribute("userEmail", email);
         request.setAttribute("selectedFest", festival);
         request.setAttribute("userMsg", message);
 
-        // 3. 转发到确认页面 (Task 1d [cite: 68])
+        // 3. Send information to confirmation page
         request.getRequestDispatcher("confirmation.jsp").forward(request, response);
     }
 }
