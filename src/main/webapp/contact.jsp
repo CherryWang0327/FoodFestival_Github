@@ -63,7 +63,6 @@
         </div>
     </main>
 
-    <%-- 5. 引入页脚 (包含版权信息和 JS 引用) --%>
     <%@ include file="includes/footer.jsp" %>
 
 </body>
