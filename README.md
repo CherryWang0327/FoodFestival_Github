@@ -8,12 +8,12 @@ java/
 │           └── RegisterServlet.java # This Servlet receives the user-submitted registration data, encapsulates it into the request scope, and forwards it to confirmation.jsp for display.
 webapp/
 ├── css/
-│   └── base.css                     # 
-│   └── component.css                # 
-│   └── home.css                     # 
-│   └── layout.css                   # 
-│   └── pages.css                    # 
-│   └── responsive.css               # 
+│   └── base.css                     # Global font imports, hard reset, body defaults, and shared utility  classes (links, lists, brand font)
+│   └── component.css                # Reusable UI components shared across pages (e.g. .btn-outline-orange)
+│   └── home.css                     # Hero section, upcoming festivals grid with cards and badges, featured vendors section
+│   └── layout.css                   # Sticky header with navigation bar, and site-wide footer
+│   └── pages.css                    # Page-specific styles: event details, contact form, visitor registration, and confirmation ticket
+│   └── responsive.css               # All breakpoint-based media queries managed centrally 
 ├── js/
 │   └── validation.js                # 
 ├── WEB-INF/
