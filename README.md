@@ -5,32 +5,32 @@ java/
 ├── com/
 │   └── FoodFest/
 │       └── Servlet/
-│           └── RegisterServlet.java
+│           └── RegisterServlet.java # This Servlet receives the user-submitted registration data, encapsulates it into the request scope, and forwards it to confirmation.jsp for display.
 webapp/
 ├── css/
-│   └── base.css               # 
-│   └── component.css          # 
-│   └── home.css               # 
-│   └── layout.css             # 
-│   └── pages.css              # 
-│   └── responsive.css         # 
+│   └── base.css                     # 
+│   └── component.css                # 
+│   └── home.css                     # 
+│   └── layout.css                   # 
+│   └── pages.css                    # 
+│   └── responsive.css               # 
 ├── js/
-│   └── validation.js          # 
+│   └── validation.js                # 
 ├── WEB-INF/
-│   └── web.xml                # 
-├── assets/                    # 
+│   └── web.xml                      # 
+├── assets/                     
 │   └── images/ 
 │       └── event/               
 │       └── hero/
-│       └── vendor/ 
+│       └── vendor/                  #vendor page inserted images
 ├── includes/
-│   └── footer.jsp             # website footer of every page showing "© 2026 PE2 Group 2 - Team 6. All Rights Reserved." 
-│   └── header.jsp             # website header of every page showing website logo, name and navigating to other pages.                           
-├── home.jsp                   # 
-├── home_festival_module.jsp   # 
-├── home_vendor_module.jsp     # 
-├── contact.jsp                # 
-├── details.jsp                # 
-├── event_registration.jsp     # 
-├── user_registration.jsp      # 
-└── confirmation.jsp           # 
+│   └── footer.jsp                   # website footer of every page showing "© 2026 PE2 Group 2 - Team 6. All Rights Reserved." 
+│   └── header.jsp                   # website header of every page showing website logo, name and navigating to other pages                           
+├── home.jsp                         # 
+├── home_festival_module.jsp         # 
+├── home_vendor_module.jsp           # vendor page showing vendors cooperate with FoodFest2026 (statically show) 
+├── contact.jsp                      # contact page allowing users to submit inquiries directly and provides quick navigation and links to contact via Email and WhatsApp (statically show)
+├── details.jsp                      # 
+├── event_registration.jsp           # 
+├── user_registration.jsp            # 
+└── confirmation.jsp                 # confirmation page displaying the registration success status and a summary of the user's submitted information
