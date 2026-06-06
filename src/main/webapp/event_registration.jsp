@@ -5,25 +5,25 @@
     <meta charset="UTF-8">
     <title>Register | FoodFest 2026</title>
     
-    <!-- 1. 外部依赖 (仅保留 FontAwesome 图标) -->
+    <!-- 1. external dependence (only retain the FontAwesome icon) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- 2. 引入品牌样式表 -->
+    <!-- 2. intro stylesheet -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 
-    <!-- 3. 表单验证 JS -->
+    <!-- 3.validation JS -->
     <script src="${pageContext.request.contextPath}/js/validation.js" defer></script>
 </head>
 <body class="site-body">
 
-    <!-- 统一引入导航栏 -->
+    <!-- unified header -->
     <%@ include file="includes/header.jsp" %>
 
-    <!-- 注册页主体包裹器 -->
+    <!-- Registration page body wrapper -->
     <main class="reg-main-wrap">
         <div class="reg-card-box">
             
-            <!-- 左侧：纯色信息面板 -->
+            <!-- Left side: Solid color information panel -->
             <div class="reg-side-info">
                 <h3 class="side-info-title">Join the Feast</h3>
                 <p class="side-info-desc">Register now to get exclusive updates and early bird tickets for FoodFest 2026.</p>
@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <!-- 右侧：表单输入区域 -->
+            <!-- Right side: Form input area -->
             <div class="reg-form-area">
                 <h2 class="form-area-title">Visitor Registration</h2>
                 <form id="regForm" action="RegisterServlet" method="POST" onsubmit="return validateForm()">
@@ -72,7 +72,7 @@
         </div>
     </main>
 
-    <%-- 5. 引入页脚 (包含版权信息和 JS 引用) --%>
+    <%-- 5. Include a footer (containing copyright information and JS references) --%>
     <%@ include file="includes/footer.jsp" %>
 </body>
 </html>

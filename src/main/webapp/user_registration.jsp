@@ -21,7 +21,7 @@
                 <button id="register-btn" class="auth-tab" onclick="showRegister()">Register</button>
             </div>
 
-            <!-- Login 表单 -->
+            <!-- Login Sheet -->
             <form id="login-form" action="LoginServlet" method="POST" onsubmit="return validateLoginForm()">
                 <div id="login-error" class="auth-error"></div>
                 <div class="auth-form-group">
@@ -40,7 +40,7 @@
                 <button type="submit" class="auth-submit-btn">Sign In</button>
             </form>
 
-            <!-- Register 表单 -->
+            <!-- Register Sheet -->
             <form id="register-form" action="RegisterServlet" method="POST" onsubmit="return validateRegisterForm()" style="display:none;">
                 <div id="register-error" class="auth-error"></div>
                 <div class="auth-form-group">
