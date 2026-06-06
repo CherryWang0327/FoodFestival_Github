@@ -15,7 +15,7 @@ webapp/
 │   └── pages.css                    # Page-specific styles: event details, contact form, visitor registration, and confirmation ticket
 │   └── responsive.css               # All breakpoint-based media queries managed centrally 
 ├── js/
-│   └── validation.js                # 
+│   └── validation.js                # Inform the validation information for event registration page and user registration page
 ├── WEB-INF/
 │   └── web.xml                      # 
 ├── assets/                     
@@ -31,6 +31,6 @@ webapp/
 ├── home_vendor_module.jsp           # vendor page showing vendors cooperate with FoodFest2026 (statically show) 
 ├── contact.jsp                      # contact page allowing users to submit inquiries directly and provides quick navigation and links to contact via Email and WhatsApp (statically show)
 ├── details.jsp                      # Shows detailed information for a selected festival event
-├── event_registration.jsp           # 
-├── user_registration.jsp            # 
+├── event_registration.jsp           # Privade events for users to register with the detail information
+├── user_registration.jsp            # Users registration or login page with email, name and password
 └── confirmation.jsp                 # confirmation page displaying the registration success status and a summary of the user's submitted information
