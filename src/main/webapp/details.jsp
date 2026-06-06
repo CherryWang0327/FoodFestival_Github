@@ -1,8 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
+	// Retrieve the festival ID passed from the URL paramter
     String id = request.getParameter("id");
 
+	// Declare variables to store festival information
     String title = "";
     String category = "";
     String image = "";
@@ -13,6 +15,7 @@
     String map = "";
     String tagColor = "";
 
+    // Load festival details based on the selected festival ID
     if ("1".equals(id)) {
         title = "Spice Route Express";
         category = "Asian Fusion Festival";
@@ -64,10 +67,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %> | FoodFest 2026</title>
 
-    <!-- 1. 外部依赖 (仅保留 FontAwesome 图标) -->
+    <!-- 1. External library for Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- 2. 引入品牌样式表 (自动读取之前改过的公用样式) -->
+    <!-- 2. Import the main stylesheet for consistent website branding -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 </head>
 
@@ -75,37 +78,37 @@
 
 <%@ include file="includes/header.jsp" %>
 
-<!-- MAIN CONTENT -->
+<!-- Main content area -->
 <main class="details-main-wrap">
 
-    <!-- 返回首页按钮 -->
+    <!-- Navigation link to return to the homepage -->
     <a href="home.jsp" class="back-home-link">
         <i class="fas fa-arrow-left"></i>
         Back to Home
     </a>
 
-    <!-- 详情主卡片区 -->
+    <!-- Festival details card container -->
     <section class="details-card">
 
-        <!-- 左侧/上部图片视窗 -->
+        <!-- Festival image section -->
         <div class="details-img-area">
             <img src="${pageContext.request.contextPath}/assets/images/event/<%= image %>"
                  alt="<%= title %>"
                  class="details-hero-img">
         </div>
 
-        <!-- 右侧/下部文字内容区 -->
+        <!-- Festival information section -->
         <div class="details-content-area">
             
-            <!-- 动态分类标签 (通过注入 data-color 属性让纯 CSS 完美接管颜色控制) -->
+            <!-- Dynamic category badge with color controlled by CSS -->
             <span class="details-badge" data-color="<%= tagColor %>">
                 <%= category %>
             </span>
 
-            <!-- 活动主标题 -->
+            <!-- Festival title -->
             <h2 class="details-title"><%= title %></h2>
 
-            <!-- 三色聚合基本信息面板 -->
+            <!-- Festival date, time, and location information -->
             <div class="details-info-grid">
                 <div class="info-tag-box tag-orange">
                     <i class="far fa-calendar-alt"></i>
@@ -123,10 +126,10 @@
                 </div>
             </div>
 
-            <!-- 活动具体长文描述 -->
+            <!-- Detailed festival description -->
             <p class="details-description"><%= description %></p>
 
-            <!-- 谷歌嵌入地图外框 -->
+            <!-- Embedded Google Map showing the festival location -->
             <div class="details-map-wrap">
                 <iframe class="details-map-iframe"
                         src="<%= map %>"
@@ -134,7 +137,7 @@
                 </iframe>
             </div>
 
-            <!-- 底部核心转化交互按钮 -->
+            <!-- Call-to-action button for event registration -->
             <a href="event_registration.jsp" class="details-submit-btn">
                 Register Your Interest
             </a>
