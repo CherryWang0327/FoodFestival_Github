@@ -24,10 +24,8 @@ webapp/
 │       └── hero/
 │       └── vendor/ 
 ├── includes/
-│   └── footer.jsp             # 
-│   └── header.jsp             # 
-│   └── home.css               # 
-│   └── layout.css             #                               
+│   └── footer.jsp             # website footer of every page showing "© 2026 PE2 Group 2 - Team 6. All Rights Reserved." 
+│   └── header.jsp             # website header of every page showing website logo, name and navigating to other pages.                           
 ├── home.jsp                   # 
 ├── home_festival_module.jsp   # 
 ├── home_vendor_module.jsp     # 
