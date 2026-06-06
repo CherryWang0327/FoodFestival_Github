@@ -20,17 +20,17 @@ webapp/
 │   └── web.xml                      # 
 ├── assets/                     
 │   └── images/ 
-│       └── event/               
-│       └── hero/
-│       └── vendor/                  #vendor page inserted images
+│       └── event/                   # Stores festival/event images used in the website
+│       └── hero/                    # Stores homepage hero banner images
+│       └── vendor/                  # vendor page inserted images
 ├── includes/
 │   └── footer.jsp                   # website footer of every page showing "© 2026 PE2 Group 2 - Team 6. All Rights Reserved." 
 │   └── header.jsp                   # website header of every page showing website logo, name and navigating to other pages                           
-├── home.jsp                         # 
-├── home_festival_module.jsp         # 
+├── home.jsp                         # Main entry page that combines and displays homepage sections
+├── home_festival_module.jsp         # Displays featured festivals on the homepage
 ├── home_vendor_module.jsp           # vendor page showing vendors cooperate with FoodFest2026 (statically show) 
 ├── contact.jsp                      # contact page allowing users to submit inquiries directly and provides quick navigation and links to contact via Email and WhatsApp (statically show)
-├── details.jsp                      # 
+├── details.jsp                      # Shows detailed information for a selected festival event
 ├── event_registration.jsp           # 
 ├── user_registration.jsp            # 
 └── confirmation.jsp                 # confirmation page displaying the registration success status and a summary of the user's submitted information
