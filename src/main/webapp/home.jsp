@@ -1,7 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%-- 1. 引入头部 (包含导航栏和 main.css，确保里面已经没有 Tailwind 的 <script> 标签) --%>
+<%-- 1. Include header section (navigation bar + main css styles) --%>
 <%@ include file="includes/header.jsp" %>
 
+	<%-- Hero section: main landing banner of the homepage --%>
     <section class="hero-section">
         <div class="hero-overlay"></div>
         
@@ -12,9 +13,17 @@
         </div>
     </section>
 
+	<%-- 2. Include festival module section (display list of festivals on homepage) --%>
     <jsp:include page="home_festival_module.jsp" />
 
+	<%-- 3. Include vendore module section (display features vendors) --%>
     <jsp:include page="home_vendor_module.jsp" />
 
-<%-- 5. 引入页脚 (包含版权信息和 JS 引用) --%>
+<%-- 4. Include footer section (copyright information + JavaScript files) --%>
 <%@ include file="includes/footer.jsp" %>
+
+
+
+
+
+

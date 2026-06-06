@@ -1,7 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/component.css">
+
 <section id="festivals" class="festival-section">
-    <!-- 模块标题区域 -->
+    <!-- Section heading containing title and introduction -->
     <div class="section-heading">
         <h3 class="section-title brand-font">Upcoming Food Festivals</h3>
         <div class="heading-line"></div>
@@ -11,18 +12,23 @@
         </p>
     </div>
 
-    <!-- 节日卡片网格容器 -->
+    <!-- Festival card grid container -->
     <div class="festival-grid">
 
-        <!-- 节日卡片 1 -->
+        <!-- Festival Card 1: Spice Route Express -->
         <div class="festival-card">
             <div class="card-image-wrap">
+            
+            	<!-- Festival image -->
                 <img src="${pageContext.request.contextPath}/assets/images/event/spice-route.png" 
                      alt="Spice Route Express" 
                      class="card-img">
-                <!-- 标签带有特定的业务修饰类名 -->
+                     
+                <!-- Festival category badge -->
                 <div class="card-badge badge-asian">Asian Fusion</div>
             </div>
+            
+            <!-- Festival information -->
             <div class="card-body">
                 <h4 class="card-title">Spice Route Express</h4>
                 <p class="card-date date-asian">July 12–14, 2026 • TRX City Park</p>
@@ -30,11 +36,13 @@
                     Explore Southeast Asian fusion flavors featuring laksa,
                     handrolled sushi, satay, dim sum, and vibrant cultural street food experiences.
                 </p>
+                
+                <!-- Navigate to festival detail page -->
                 <a href="details.jsp?id=1" class="btn-outline-orange">View Details</a>
             </div>
         </div>
 
-        <!-- 节日卡片 2 -->
+        <!-- Festival Card 2: Vegan Harvest Day -->
         <div class="festival-card">
             <div class="card-image-wrap">
                 <img src="${pageContext.request.contextPath}/assets/images/event/vegan.png" 
@@ -54,7 +62,7 @@
             </div>
         </div>
 
-        <!-- 节日卡片 3 -->
+        <!-- Festival Card 3: Midnight Street Fiesta -->
         <div class="festival-card">
             <div class="card-image-wrap">
                 <img src="${pageContext.request.contextPath}/assets/images/event/midnight-street.png" 
@@ -74,7 +82,7 @@
             </div>
         </div>
 
-        <!-- 节日卡片 4 -->
+        <!-- Festival Card 4: Coastal Seafood Carnival -->
         <div class="festival-card">
             <div class="card-image-wrap">
                 <img src="${pageContext.request.contextPath}/assets/images/event/seafood.png" 

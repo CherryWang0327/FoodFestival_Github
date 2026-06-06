@@ -21,7 +21,7 @@
                     <h4 class="vendor-name">The Grill Master</h4>
                 </div>
                 <div class="vendor-tag-wrap">
-                    <p class="vendor-tag">BBQ & Smoked Meats</p>
+                    <p class="vendor-tag">BBQ &amp; Smoked Meats</p>
                 </div>
                 <div class="vendor-desc-wrap">
                     <p class="vendor-desc">Bringing the authentic Texas smokehouse experience to your plate.</p>
