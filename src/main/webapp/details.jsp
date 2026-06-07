@@ -131,10 +131,14 @@
 
             <!-- Embedded Google Map showing the festival location -->
             <div class="details-map-wrap">
-                <iframe class="details-map-iframe"
-                        src="<%= map %>"
-                        loading="lazy">
-                </iframe>
+				<iframe class="details-map-iframe"
+				        src="<%= map %>"
+				        id="festivalMap">
+				</iframe>
+				
+				<script>
+				    document.getElementById('festivalMap').setAttribute('loading', 'lazy');
+				</script>
             </div>
 
             <!-- Call-to-action button for event registration -->
