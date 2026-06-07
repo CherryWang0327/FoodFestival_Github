@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/UserRegisterServlet")
-public class UserRegisterServlet extends HttpServlet {
+public class Userregisterservlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -25,5 +25,4 @@ public class UserRegisterServlet extends HttpServlet {
         // 3. jump to main page (Login successful)
         request.getRequestDispatcher("home.jsp").forward(request, response);
     }
-}
 }
