@@ -7,7 +7,7 @@
     <title>FoodFest 2026 | Register &amp; Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/user_registration.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/Registration.css">
 </head>
 <body>
 

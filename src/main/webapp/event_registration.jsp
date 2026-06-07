@@ -46,7 +46,7 @@
                     
                     <div class="reg-form-group">
                         <label class="reg-form-label">Email Address</label>
-                        <input type="email" id="email" name="email" class="reg-form-input" placeholder="your@email.com">
+                        <input type="text" id="email" name="email" class="reg-form-input" placeholder="your@email.com">
                     </div>
                     
                     <div class="reg-form-group">
