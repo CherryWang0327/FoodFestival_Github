@@ -132,7 +132,7 @@
 
 .card-image-wrap {
     position: relative;
-    height: 210px;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
@@ -176,6 +176,7 @@
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 0.75rem;
+    min-height: 60px;
 }
 
 .card-date {
