@@ -94,7 +94,7 @@
     width: 6rem;
     height: 4px;
     background-color: #f97316;
-    margin: 1rem auto 0 auto;
+    margin: 1rem auto 0;
     border-radius: 9999px;
 }
 
@@ -103,12 +103,12 @@
     font-size: 0.875rem;
     line-height: 1.625;
     max-width: 42rem;
-    margin: 1.25rem auto 0 auto;
+    margin: 1.25rem auto 0;
 }
 
 .festival-grid {
     display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem;
 }
 
@@ -118,9 +118,9 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
     overflow: hidden;
     display: flex;
-    max-height: 80vh;
-    height: 550px;
+    height: auto;
     flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
                 box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -132,7 +132,7 @@
 
 .card-image-wrap {
     position: relative;
-    height: 14rem;
+    height: 210px;
     overflow: hidden;
 }
 
