@@ -17,7 +17,7 @@ webapp/
 ├── js/
 │   └── validation.js                # Inform the validation information for event registration page and user registration page
 ├── WEB-INF/
-│   └── web.xml                      # 
+│   └── web.xml                      # Specifies the application name within Tomcat 10+ containers and defines the default homepage route as "home".
 ├── assets/                     
 │   └── images/ 
 │       └── event/                   # Stores festival/event images used in the website
