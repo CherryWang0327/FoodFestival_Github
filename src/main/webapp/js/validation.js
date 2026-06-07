@@ -2,41 +2,48 @@
 
 /* ── Event Registration (event_registration.jsp) ── */
 function validateForm() {
-    const name = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
+    const name = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
     const fest = document.getElementById('prefFestival').value;
 
+    // Required fields check
     if (!name || !email || !fest) {
-        alert("Please fill in all required fields!");
+        showAuthError('reg-error', 'Please fill in all required fields.');
         return false;
     }
-    
 
-// Email format check
+    // Email format check
     const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address (e.g. you@example.com).");
+        showAuthError('reg-error', 'Please enter a valid email address (e.g. you@example.com).');
         return false;
     }
- 
-    return true;
 
+    clearAuthError('reg-error');
+    return true;
 }
+
 /* ── User Login (user_registration.jsp) ── */
 function validateLoginForm() {
     const email = document.getElementById('login-email').value.trim();
     const password = document.getElementById('login-pw').value;
 
     // Email format check
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
         showAuthError('login-error', 'Please enter a valid email address (e.g. you@example.com).');
         return false;
     }
 
-    // Password not empty
+    // Password: min 8 chars, must contain letter + number
+    const hasLetter = /[a-zA-Z]/.test(password);
+    const hasNumber = /[0-9]/.test(password);
     if (!password) {
         showAuthError('login-error', 'Please enter your password.');
+        return false;
+    }
+    if (password.length < 8 || !hasLetter || !hasNumber) {
+        showAuthError('login-error', 'Password must be at least 8 characters and include both letters and numbers.');
         return false;
     }
 
@@ -57,7 +64,7 @@ function validateRegisterForm() {
     }
 
     // Email format check
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
         showAuthError('register-error', 'Please enter a valid email address (e.g. you@example.com).');
         return false;

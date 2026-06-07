@@ -11,7 +11,10 @@
     <!-- 2. intro stylesheet -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 
-    <!-- 3.validation JS -->
+    <!-- 3. page-specific stylesheet -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/event_registration.css">
+
+    <!-- 4. validation JS -->
     <script src="${pageContext.request.contextPath}/js/validation.js" defer></script>
 </head>
 <body class="site-body">
@@ -38,6 +41,9 @@
             <div class="reg-form-area">
                 <h2 class="form-area-title">Visitor Registration</h2>
                 <form id="regForm" action="RegisterServlet" method="POST" onsubmit="return validateForm()">
+
+                    <!-- Inline error message -->
+                    <div id="reg-error" class="reg-error"></div>
                     
                     <div class="reg-form-group">
                         <label class="reg-form-label">Full Name</label>

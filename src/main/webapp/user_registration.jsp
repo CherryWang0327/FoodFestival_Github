@@ -22,7 +22,7 @@
             </div>
 
             <!-- Login Sheet -->
-            <form id="login-form" action="LoginServlet" method="POST" onsubmit="return validateLoginForm()">
+            <form id="login-form" action="UserLoginServlet" method="POST" onsubmit="return validateLoginForm()">
                 <div id="login-error" class="auth-error"></div>
                 <div class="auth-form-group">
                     <label class="auth-label">Email</label>
@@ -41,7 +41,7 @@
             </form>
 
             <!-- Register Sheet -->
-            <form id="register-form" action="RegisterServlet" method="POST" onsubmit="return validateRegisterForm()" style="display:none;">
+            <form id="register-form" action="UserRegisterServlet" method="POST" onsubmit="return validateRegisterForm()" style="display:none;">
                 <div id="register-error" class="auth-error"></div>
                 <div class="auth-form-group">
                     <label class="auth-label">Username</label>
