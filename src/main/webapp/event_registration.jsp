@@ -40,7 +40,7 @@
             <!-- Right side: Form input area -->
             <div class="reg-form-area">
                 <h2 class="form-area-title">Visitor Registration</h2>
-                <form id="regForm" action="RegisterServlet" method="POST" onsubmit="return validateForm()">
+                <form id="regForm" action="${pageContext.request.contextPath}/RegisterServlet" method="POST" onsubmit="return validateForm()">
 
                     <!-- Inline error message -->
                     <div id="reg-error" class="reg-error"></div>
