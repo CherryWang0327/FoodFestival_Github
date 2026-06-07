@@ -1,6 +1,6 @@
 # FoodFest 2026 
 
-## 📂 Structure of the project in main/
+## Structure of the project in main/
 java/
 ├── com/
 │   └── FoodFest/
