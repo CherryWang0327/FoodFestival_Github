@@ -56,7 +56,7 @@
                             <option value="Spice Route Express">Spice Route Express</option>
                             <option value="Vegan Harvest Day">Vegan Harvest Day</option>
                             <option value="Sweet Tooth Carnival">Sweet Tooth Carnival</option>
-                            <option value="Smoke & Sizzle BBQ">Smoke & Sizzle BBQ</option>
+                            <option value="Smoke & Sizzle BBQ">Smoke &amp; Sizzle BBQ</option>
                         </select>
                     </div>
                     
