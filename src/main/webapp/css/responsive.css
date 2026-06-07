@@ -1,8 +1,8 @@
 /* ==========================================================================
-   响应式媒体查询 — 所有断点集中管理
+   Responsive Media Queries — All Breakpoints Managed Centrally
    ========================================================================== */
 
-/* 640px — 小屏平板 */
+/* 640px — Small Tablet */
 @media (min-width: 640px) {
     .section-title    { font-size: 2.25rem; }
     .section-subtitle { font-size: 1rem; }
@@ -13,7 +13,7 @@
     .ticket-return-btn  { width: auto; }
 }
 
-/* 768px — 平板 */
+/* 768px — Tablet */
 @media (min-width: 768px) {
     .vendor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
@@ -26,7 +26,7 @@
     .reg-form-area { width: 66.666667%; }
 }
 
-/* 1024px — 桌面 */
+/* 1024px — Desktop */
 @media (min-width: 1024px) {
     .section-title     { font-size: 3rem; }
     .festival-section  { padding: 6rem 2rem; }
@@ -38,7 +38,7 @@
     .details-title        { font-size: 2rem; }
 }
 
-/* 1280px — 宽屏 */
+/* 1280px — Wide Screen */
 @media (min-width: 1280px) {
     .festival-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
